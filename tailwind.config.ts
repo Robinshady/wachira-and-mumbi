@@ -79,10 +79,35 @@ export default {
             height: "0",
           },
         },
+        "gradient-background-1": {
+          "0%, 100%": {
+            "background-position": "0% 50%",
+          },
+          "50%": {
+            "background-position": "100% 50%",
+          },
+        },
+        "shimmer": {
+          "0%": {
+            "background-position": "-40rem 0",
+          },
+          "100%": {
+            "background-position": "40rem 0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient-slow": "gradient-background-1 15s ease infinite",
+        "shimmer": "shimmer 3s infinite linear",
+      },
+      backgroundImage: {
+        "hero-pattern": "url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0iIzBmMTcyYSI+PC9yZWN0Pgo8cGF0aCBkPSJNMzAgNTBMMzAgMTBNNDAgMzBMMjAgMzAiIHN0cm9rZT0iIzBiNDk4YiIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDUiPjwvcGF0aD4KPC9zdmc+')",
+        "radial-pulse": "radial-gradient(circle, rgba(221,198,145,0.3) 0%, rgba(10,30,60,0) 70%)",
+      },
+      skew: {
+        '30': '30deg',
       },
     },
   },
