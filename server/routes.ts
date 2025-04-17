@@ -174,7 +174,7 @@ When users ask questions that require research, prioritize Kenyan sources in thi
           stream: false,
           frequency_penalty: 1,
           // Enable web search with Kenya-specific domains prioritized
-          search_domain_filter: ["kenyalaw.org", "*.go.ke", "*.ac.ke", "*.co.ke"],
+          search_domain_filter: ["kenyalaw.org", "go.ke", "ac.ke", "co.ke"],
           // Focus on recent content
           search_recency_filter: "month",
           // Return citations for transparency

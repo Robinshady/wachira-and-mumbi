@@ -13,7 +13,7 @@ interface Message {
 }
 
 // Default greeting and suggestions
-const GREETING_MESSAGE = "Hello, I'm your legal assistant from Wachira & Mumbi Advocates. How can I help you with Kenyan legal matters today?";
+const GREETING_MESSAGE = "Jambo! I'm your professional legal assistant from Wachira & Mumbi Advocates, specializing in Kenyan law. I can answer questions about Kenyan legal matters, help with understanding legal procedures, or provide information about our firm's services.\n\nHow may I assist you today?";
 const SUGGESTIONS = [
   "What are the key features of Kenyan corporate law?",
   "How do I register a business in Kenya?",
@@ -221,11 +221,11 @@ export default function AIChatAssistant() {
         <div className="fixed left-6 bottom-6 z-50">
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="w-14 h-14 rounded-full bg-[var(--gold)] shadow-lg flex items-center justify-center hover:bg-[var(--gold-light)] transition-colors duration-300"
+            className="w-16 h-16 rounded-full bg-[var(--gold)] shadow-lg flex items-center justify-center hover:bg-[var(--gold-light)] transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <i className={`fas ${isOpen ? 'fa-times' : 'fa-comment'} text-[var(--navy)]`}></i>
+            <i className={`fas ${isOpen ? 'fa-times' : 'fa-comment'} text-[var(--navy)] text-xl`}></i>
           </motion.button>
         </div>
       )}
@@ -241,13 +241,13 @@ export default function AIChatAssistant() {
             className={`fixed z-50 ${
               isFullscreen 
                 ? 'inset-0 m-0'
-                : 'left-6 bottom-24 w-full max-w-md'
+                : 'left-6 bottom-24 w-full max-w-lg'
             }`}
           >
             <div className={`bg-white shadow-2xl border border-[var(--gold)]/10 overflow-hidden flex flex-col ${
               isFullscreen
                 ? 'h-full rounded-none'
-                : 'h-[500px] rounded-lg'
+                : 'h-[600px] rounded-lg'
             }`}>
               {/* Header */}
               <div className="bg-gradient-to-r from-[var(--navy)] to-[var(--navy-light)] p-4 flex items-center justify-between">
@@ -295,7 +295,7 @@ export default function AIChatAssistant() {
                             : 'bg-white shadow-sm border border-gray-200 rounded-tl-none'
                         }`}
                       >
-                        <p className={`text-sm ${message.role === 'user' ? 'segoe-regular' : 'segoe-regular'}`}>
+                        <p className={`text-base leading-relaxed ${message.role === 'user' ? 'segoe-regular' : 'segoe-regular'}`}>
                           {message.content}
                         </p>
                         
