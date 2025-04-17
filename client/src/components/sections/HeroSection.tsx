@@ -51,7 +51,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8cGF0aCBkPSJNMzAgNTBMMzAgMTBNNDAgMzBMMjAgMzAiIHN0cm9rZT0iI2RkYzY5MSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDUiPjwvcGF0aD4KPC9zdmc+')] opacity-20"></div>
       </div>
       
-      {/* Interactive geometric elements */}
+      {/* Interactive geometric elements and judiciary symbols */}
       <motion.div
         className="absolute inset-0 z-0 overflow-hidden"
         style={{ scale: circleScale }}
@@ -88,6 +88,75 @@ export default function HeroSection() {
               </pattern>
             </defs>
             <rect x="0" y="0" width="100%" height="100%" fill="url(#hexGrid)" />
+          </svg>
+        </motion.div>
+        
+        {/* Judiciary Icons - Scales of Justice */}
+        <motion.div 
+          className="absolute top-[15%] right-[15%] opacity-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.04 }}
+          transition={{ duration: 2, delay: 1 }}
+        >
+          <svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3L3 10H21L12 3Z" stroke="var(--gold)" strokeWidth="0.4" />
+            <rect x="11" y="10" width="2" height="11" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M5 10V15M5 15C5 16.1046 6.34315 17 8 17C9.65685 17 11 16.1046 11 15M5 15L3 21H13L11 15" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M19 10V15M19 15C19 16.1046 17.6569 17 16 17C14.3431 17 13 16.1046 13 15M19 15L21 21H11L13 15" stroke="var(--gold)" strokeWidth="0.4" />
+            <rect x="2" y="21" width="20" height="1" stroke="var(--gold)" strokeWidth="0.4" />
+          </svg>
+        </motion.div>
+        
+        {/* Judiciary Icons - Gavel */}
+        <motion.div 
+          className="absolute bottom-[25%] left-[10%] opacity-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.04 }}
+          transition={{ duration: 2, delay: 1.5 }}
+        >
+          <svg width="180" height="180" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 14L19 9L21 11L16 16L14 14Z" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M14 14L8 20L6 18L12 12L14 14Z" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M8 20L4 20L4 22L8 22L8 20Z" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M14 14L12 12L10 10L12 8L14 10L16 12L14 14Z" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M10 10L5 5L7 3L12 8L10 10Z" stroke="var(--gold)" strokeWidth="0.4" />
+          </svg>
+        </motion.div>
+        
+        {/* Judiciary Icons - Law Book */}
+        <motion.div 
+          className="absolute top-[60%] right-[20%] opacity-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.03 }}
+          transition={{ duration: 2, delay: 2 }}
+        >
+          <svg width="150" height="150" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4Z" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M12 4V20" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M8 8H6" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M8 12H6" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M8 16H6" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M18 8H16" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M18 12H16" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M18 16H16" stroke="var(--gold)" strokeWidth="0.4" />
+          </svg>
+        </motion.div>
+        
+        {/* Kenyan Court Seal - Simplified */}
+        <motion.div 
+          className="absolute top-[40%] left-[22%] opacity-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.04 }}
+          transition={{ duration: 2, delay: 2.5 }}
+        >
+          <svg width="220" height="220" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="40" stroke="var(--gold)" strokeWidth="0.5" fill="none" />
+            <circle cx="50" cy="50" r="38" stroke="var(--gold)" strokeWidth="0.3" fill="none" />
+            <path d="M50 18V82" stroke="var(--gold)" strokeWidth="0.4" />
+            <path d="M18 50L82 50" stroke="var(--gold)" strokeWidth="0.4" />
+            <circle cx="50" cy="50" r="10" stroke="var(--gold)" strokeWidth="0.4" fill="none" />
+            <path d="M39 36L61 64" stroke="var(--gold)" strokeWidth="0.3" />
+            <path d="M39 64L61 36" stroke="var(--gold)" strokeWidth="0.3" />
           </svg>
         </motion.div>
       </motion.div>

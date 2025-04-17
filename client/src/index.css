@@ -126,9 +126,9 @@
     --chart-5: 0 0% 20%;
 
     /* Custom variables - Sophisticated darker muted color palette */
-    --navy: #161F2C;
-    --navy-light: #212C3F;
-    --navy-lighter: #2C374A;
+    --navy: #0A121F; /* Darkened */
+    --navy-light: #121E32; /* Darkened */
+    --navy-lighter: #1D2940; /* Darkened */
     --gold: #AA8C4B;
     --gold-light: #C1A666;
     --gold-dark: #8A6E35;
