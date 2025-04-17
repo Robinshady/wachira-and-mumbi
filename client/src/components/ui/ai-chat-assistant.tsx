@@ -22,14 +22,13 @@ const SUGGESTIONS = [
   "How does Kenyan family law handle divorce proceedings?",
 ];
 
-export default function AIChatAssistant({ onMinimize }: { onMinimize?: () => void }) {
-  const [isOpen, setIsOpen] = useState(true);
+export default function AIChatAssistant() {
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
-  const [showInitialPopup, setShowInitialPopup] = useState(false);
+  const [showInitialPopup, setShowInitialPopup] = useState(true);
   const [isTyping, setIsTyping] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [expertMode, setExpertMode] = useState(false);
   const messageEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   
@@ -163,11 +162,7 @@ export default function AIChatAssistant({ onMinimize }: { onMinimize?: () => voi
   };
   
   const handleClose = () => {
-    if (onMinimize) {
-      onMinimize();
-    } else {
-      setIsOpen(false);
-    }
+    setIsOpen(false);
   };
   
   const handleSuggestionClick = (suggestion: string) => {
