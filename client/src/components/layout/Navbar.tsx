@@ -182,8 +182,8 @@ export default function Navbar() {
                     </div>
                   </div>
                   
-                  {/* Contact Quick Info */}
-                  <div className="hidden md:block">
+                  {/* Contact Quick Info - Show on mobile too */}
+                  <div className="mt-8 md:mt-0">
                     <h3 className="text-[var(--gold)] text-xs font-medium uppercase tracking-widest mb-4">Contact Information</h3>
                     
                     <div className="space-y-4 text-gray-300">
@@ -193,7 +193,7 @@ export default function Navbar() {
                         </div>
                         <div>
                           <p className="text-sm font-medium text-white">Nairobi Office</p>
-                          <p className="text-xs mt-1">Supreme Court Building, City Hall Way</p>
+                          <p className="text-xs mt-1">ACK Garden House, Floor 2, Wing C.,<br />1st Ngong Avenue - Off Ngong Road</p>
                         </div>
                       </div>
                       
@@ -203,7 +203,7 @@ export default function Navbar() {
                         </div>
                         <div>
                           <p className="text-sm font-medium text-white">Call Us</p>
-                          <p className="text-xs mt-1">+254 (0) 700 000 000</p>
+                          <p className="text-xs mt-1">0741 647 831</p>
                         </div>
                       </div>
                       
@@ -213,7 +213,7 @@ export default function Navbar() {
                         </div>
                         <div>
                           <p className="text-sm font-medium text-white">Email Us</p>
-                          <p className="text-xs mt-1">info@wachiramumbi.com</p>
+                          <p className="text-xs mt-1">info@wachiramumbilaw.com</p>
                         </div>
                       </div>
                     </div>
