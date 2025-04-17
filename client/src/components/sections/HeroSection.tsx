@@ -286,7 +286,7 @@ export default function HeroSection() {
         
         {/* Sophisticated description */}
         <motion.p 
-          className="premium-text segoe-light text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed"
+          className="premium-text segoe-light text-white/90 mb-8 md:mb-12 max-w-2xl mx-auto leading-relaxed text-sm md:text-base px-4 md:px-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
@@ -298,7 +298,7 @@ export default function HeroSection() {
         
         {/* Premium CTA section with 3D effect buttons */}
         <motion.div 
-          className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+          className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 px-4 md:px-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}
@@ -306,12 +306,12 @@ export default function HeroSection() {
           {/* Primary CTA button with 3D effect */}
           <button 
             onClick={() => scrollToSection("contact")}
-            className="btn-3d bg-[var(--gold)] text-[var(--navy)] px-8 py-4 rounded-md text-center segoe-semibold text-sm uppercase tracking-wider relative overflow-hidden shadow-lg group"
+            className="btn-3d bg-[var(--gold)] text-[var(--navy)] px-5 sm:px-8 py-3 sm:py-4 rounded-md text-center segoe-semibold text-xs sm:text-sm uppercase tracking-wider relative overflow-hidden shadow-lg group w-full sm:w-auto"
           >
             <span className="relative z-10 flex items-center justify-center">
               <span>Schedule Consultation</span>
               <motion.i 
-                className="fas fa-arrow-right ml-2"
+                className="fas fa-arrow-right ml-2 text-xs"
                 animate={{ x: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5, repeatDelay: 0.5 }}
               ></motion.i>
@@ -324,7 +324,7 @@ export default function HeroSection() {
           {/* Secondary CTA with glass effect */}
           <button 
             onClick={() => scrollToSection("about")}
-            className="frosted-panel border border-[var(--gold)]/20 text-white hover:border-[var(--gold)]/50 hover:text-[var(--gold)] px-8 py-4 rounded-md text-center segoe-semibold text-sm uppercase tracking-wider transition-all duration-300 group"
+            className="frosted-panel border border-[var(--gold)]/20 text-white hover:border-[var(--gold)]/50 hover:text-[var(--gold)] px-5 sm:px-8 py-3 sm:py-4 rounded-md text-center segoe-semibold text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 group w-full sm:w-auto"
           >
             <span className="relative z-10 flex items-center justify-center">
               <span>Discover Our Expertise</span>
