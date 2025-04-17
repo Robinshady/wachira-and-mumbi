@@ -1,6 +1,7 @@
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { useState, useRef } from "react";
+import { motion, useScroll, useTransform, useInView, MotionValue } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
 
+// Enhanced services with additional metadata for premium display
 const services = [
   {
     id: 1,
@@ -109,25 +110,53 @@ export default function ServicesSection() {
   return (
     <section 
       id="services" 
-      className="relative py-32 bg-gradient-to-b from-gray-50 to-gray-100 overflow-hidden" 
+      className="relative py-32 bg-gradient-to-b from-white to-gray-50 overflow-hidden" 
       ref={sectionRef}
     >
-      {/* Decorative elements - floating patterns */}
-      <motion.div 
-        className="absolute top-0 right-0 w-full h-full pointer-events-none z-0 opacity-30"
-        style={{ y: decorY }}
-      >
-        <div className="absolute top-20 right-10 w-64 h-64 border border-[var(--gold)]/10 rounded-full"></div>
-        <div className="absolute bottom-40 left-20 w-96 h-96 border border-[var(--gold)]/5 rounded-full"></div>
+      {/* Ultra-premium geometric background elements */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Abstract geometric patterns */}
         <motion.div 
-          className="absolute top-1/2 left-1/4 w-40 h-40 rounded-lg border border-[var(--gold)]/10"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        ></motion.div>
-      </motion.div>
+          className="absolute top-0 right-0 w-full h-full opacity-20"
+          style={{ y: decorY }}
+        >
+          {/* Premium circles */}
+          <div className="absolute top-20 right-10 w-[600px] h-[600px] rounded-full border border-[var(--gold)]/10"></div>
+          <div className="absolute bottom-40 left-20 w-[800px] h-[800px] rounded-full border border-[var(--gold)]/5"></div>
+          
+          {/* Rotating square */}
+          <motion.div 
+            className="absolute top-1/3 right-1/4 w-60 h-60 border border-[var(--gold)]/10 rounded-3xl"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
+          ></motion.div>
+          
+          {/* Floating hexagon */}
+          <motion.div
+            className="absolute bottom-1/4 right-20"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <svg width="100" height="100" viewBox="0 0 100 100" className="opacity-10">
+              <polygon 
+                points="50,0 93.3,25 93.3,75 50,100 6.7,75 6.7,25" 
+                fill="none" 
+                stroke="var(--gold)" 
+                strokeWidth="1"
+              />
+            </svg>
+          </motion.div>
+        </motion.div>
+        
+        {/* Light effects */}
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-[var(--gold)]/1 rounded-full blur-[200px]"></div>
+          <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[var(--navy)]/1 rounded-full blur-[250px]"></div>
+        </div>
+      </div>
       
-      {/* Background subtle pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8cGF0aCBkPSJNMzAgNTBMMzAgMTBNNDAgMzBMMjAgMzAiIHN0cm9rZT0iI2RkYzY5MSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDUiPjwvcGF0aD4KPC9zdmc+')] opacity-40 z-0"></div>
+      {/* Premium subtle grid pattern */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCI+CjxyZWN0IHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgZmlsbD0ibm9uZSI+PC9yZWN0Pgo8cGF0aCBkPSJNMzAgNTBMMzAgMTBNNDAgMzBMMjAgMzAiIHN0cm9rZT0iI2RkYzY5MSIgc3Ryb2tlLXdpZHRoPSIwLjUiIG9wYWNpdHk9IjAuMDUiPjwvcGF0aD4KPC9zdmc+')] opacity-20 z-0"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
@@ -137,45 +166,54 @@ export default function ServicesSection() {
           transition={{ duration: 0.6 }}
         >
           <div className="inline-block mx-auto mb-5">
-            <div className="flex items-center justify-center space-x-2">
-              <div className="w-10 h-px bg-[var(--gold)]"></div>
-              <span className="text-sm font-medium text-[var(--gold)] uppercase tracking-widest">Areas of Practice</span>
-              <div className="w-10 h-px bg-[var(--gold)]"></div>
+            <div className="flex items-center justify-center space-x-3">
+              <div className="w-12 h-px bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent"></div>
+              <span className="text-sm segoe-light text-[var(--gold)] uppercase tracking-ultra-wide">Areas of Practice</span>
+              <div className="w-12 h-px bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent"></div>
             </div>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--navy)] playfair leading-tight mb-8">
-            Sophisticated<br />
+          <h2 className="section-title text-[var(--navy)] leading-tight mb-8">
+            <span className="segoe-light block">Sophisticated</span>
             <span className="relative inline-block">
-              Legal Expertise
+              <span className="dynamic-gradient-text">Legal Expertise</span>
               <motion.span 
-                className="absolute -bottom-3 left-0 w-full h-1 bg-[var(--gold)]"
-                initial={{ width: 0 }}
-                animate={isInView ? { width: "100%" } : { width: 0 }}
+                className="absolute -bottom-3 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--gold)] to-transparent"
+                initial={{ width: 0, opacity: 0 }}
+                animate={isInView ? { width: "100%", opacity: 1 } : { width: 0, opacity: 0 }}
                 transition={{ duration: 1, delay: 0.5 }}
               ></motion.span>
             </span>
           </h2>
           
           <motion.p 
-            className="text-[var(--charcoal)] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            className="premium-text segoe-regular text-[var(--slate)] max-w-3xl mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Our multidisciplinary team delivers expert legal solutions across diverse practice areas 
+            Our multidisciplinary team delivers exceptional legal solutions across diverse practice areas 
             relevant to Kenya's legal landscape, combining deep local knowledge with international 
             standards of excellence.
           </motion.p>
           
-          {/* Decorative separator */}
-          <div className="mt-16 relative h-[1px] max-w-3xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white border border-gray-200 flex items-center justify-center">
-              <div className="w-6 h-6 rounded-full bg-[var(--gold)]/10 flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-[var(--gold)]"></div>
+          {/* Premium decorative separator */}
+          <div className="mt-16 relative h-px max-w-3xl mx-auto">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[var(--gold)]/20 to-transparent"></div>
+            <motion.div 
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white border border-[var(--gold)]/10 shadow-lg flex items-center justify-center overflow-hidden"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.5, delay: 0.7 }}
+            >
+              <div className="w-8 h-8 rounded-full bg-[var(--gold)]/5 flex items-center justify-center group">
+                <div className="w-2 h-2 rounded-full bg-[var(--gold)] group-hover:scale-150 transition-all duration-500"></div>
+                <div className="absolute inset-0 rounded-full border border-[var(--gold)]/20 animate-ping opacity-20"></div>
               </div>
-            </div>
+              
+              {/* Subtle radial glow */}
+              <div className="absolute inset-0 bg-radial-pulse opacity-20"></div>
+            </motion.div>
           </div>
         </motion.div>
         
@@ -246,16 +284,15 @@ export default function ServicesSection() {
                   <span className="text-xs text-[var(--gold)] font-medium">{service.highlight}</span>
                 </div>
                 
-                {/* Title with subtle underline animation */}
+                {/* Title with sophisticated animation and Segoe UI styling */}
                 <div className="mb-4 pt-2">
-                  <h3 className="text-xl font-bold text-[var(--navy)] playfair relative inline-block">
+                  <h3 className="text-xl segoe-semibold text-[var(--navy)] relative inline-block highlight-text">
                     {service.title}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--gold)]/50 group-hover:w-full transition-all duration-500 ease-in-out"></span>
                   </h3>
                 </div>
                 
-                {/* Description */}
-                <p className="text-[var(--charcoal)] text-sm leading-relaxed mb-6">
+                {/* Description with premium font styling */}
+                <p className="text-[var(--slate)] text-sm segoe-regular leading-relaxed mb-6">
                   {service.description}
                 </p>
                 
@@ -270,28 +307,30 @@ export default function ServicesSection() {
                   transition={{ duration: 0.3 }}
                 >
                   {service.stats.map((stat, index) => (
-                    <div key={index} className="bg-gray-50 rounded-lg p-3 text-center">
-                      <p className="text-lg font-bold text-[var(--gold)]">{stat.value}</p>
-                      <p className="text-xs text-gray-500">{stat.label}</p>
+                    <div key={index} className="glass-card p-3 text-center hover:bg-white/5 transition-colors duration-300">
+                      <p className="text-lg segoe-semibold text-[var(--gold)]">{stat.value}</p>
+                      <p className="text-xs segoe-light text-[var(--slate)]/80">{stat.label}</p>
                     </div>
                   ))}
                 </motion.div>
                 
-                {/* Action buttons */}
+                {/* Action buttons with premium styling */}
                 <div className="flex justify-between items-center">
                   <button 
                     onClick={() => scrollToSection("contact")}
-                    className="group/btn relative bg-[var(--navy)] text-white hover:bg-[var(--navy)]/90 px-5 py-2.5 rounded-md text-sm font-medium transition-all duration-300 flex items-center space-x-2 overflow-hidden"
+                    className="btn-3d relative bg-[var(--navy)] text-white hover:bg-[var(--navy-light)] px-5 py-2.5 rounded-md text-sm segoe-semibold transition-all duration-300 flex items-center space-x-2 overflow-hidden shadow-lg"
                   >
-                    <span className="relative z-10">Consult With Us</span>
-                    <span className="relative z-10">
-                      <i className="fas fa-arrow-right transition-transform duration-300 group-hover/btn:translate-x-1"></i>
+                    <span className="relative z-10 flex items-center">
+                      <span>Consult With Us</span>
+                      <i className="fas fa-arrow-right ml-2 transition-transform duration-300 group-hover:translate-x-1"></i>
                     </span>
-                    <span className="absolute inset-0 bg-gradient-to-r from-[var(--gold)]/0 via-[var(--gold)]/30 to-[var(--gold)]/0 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500 transform -skew-x-30 -translate-x-full group-hover/btn:translate-x-full"></span>
+                    
+                    {/* Premium shimmer effect */}
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-[var(--gold)]/0 via-[var(--gold)]/20 to-[var(--gold)]/0 opacity-0 hover:opacity-100 transition-opacity duration-500 transform -translate-x-full hover:translate-x-full"></span>
                   </button>
                   
-                  <div className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center hover:border-[var(--gold)] hover:bg-[var(--gold)]/5 transition-colors duration-300 cursor-pointer">
-                    <i className="fas fa-plus text-xs text-gray-400 hover:text-[var(--gold)] transition-colors duration-300"></i>
+                  <div className="w-10 h-10 rounded-full border border-[var(--gold)]/10 flex items-center justify-center hover:border-[var(--gold)]/30 hover:bg-[var(--gold)]/5 transition-all duration-300 cursor-pointer shadow-sm group">
+                    <i className="fas fa-plus text-xs text-[var(--gold)]/50 group-hover:text-[var(--gold)] transition-colors duration-300"></i>
                   </div>
                 </div>
               </div>
@@ -302,26 +341,42 @@ export default function ServicesSection() {
           ))}
         </motion.div>
         
-        {/* Bottom Call to Action */}
+        {/* Premium bottom Call to Action */}
         <motion.div 
-          className="mt-20 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 1.2 }}
+          className="mt-24 text-center max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <p className="text-[var(--navy)] font-medium mb-6">
+          {/* Decorative element */}
+          <div className="flex justify-center mb-8">
+            <div className="h-[1px] w-16 bg-gradient-to-r from-transparent via-[var(--gold)]/50 to-transparent"></div>
+          </div>
+          
+          <p className="segoe-regular text-[var(--slate)] text-lg mb-8">
             Need assistance with a legal matter not listed above?
           </p>
+          
           <button
             onClick={() => scrollToSection("contact")}
-            className="group relative inline-flex items-center justify-center px-8 py-3 bg-[var(--gold)]/90 hover:bg-[var(--gold)] text-[var(--navy)] rounded-md overflow-hidden transition-all duration-300 shadow-md"
+            className="btn-3d group relative inline-flex items-center justify-center px-10 py-4 bg-[var(--gold)] hover:bg-[var(--gold-light)] text-[var(--navy)] rounded-md overflow-hidden transition-all duration-300 shadow-lg"
           >
-            <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-white/10 via-transparent to-black/10"></span>
-            <span className="relative flex items-center">
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-white/20 via-transparent to-black/10"></span>
+            <span className="relative flex items-center segoe-semibold tracking-wide">
               <span className="mr-2">Contact Our Team</span>
               <i className="fas fa-chevron-right text-xs transition-transform duration-300 group-hover:translate-x-1"></i>
             </span>
+            
+            {/* Sophisticated hover effect */}
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-1000 ease-in-out"></span>
           </button>
+          
+          {/* Subtle decorative icons */}
+          <div className="flex justify-center mt-10 space-x-12 opacity-30">
+            <i className="fas fa-balance-scale text-[var(--gold)]"></i>
+            <i className="fas fa-gavel text-[var(--gold)]"></i>
+            <i className="fas fa-landmark text-[var(--gold)]"></i>
+          </div>
         </motion.div>
       </div>
       
