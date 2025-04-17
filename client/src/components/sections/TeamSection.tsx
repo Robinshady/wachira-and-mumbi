@@ -68,23 +68,23 @@ export default function TeamSection() {
   };
 
   return (
-    <section id="team" className="py-24 bg-white" ref={sectionRef}>
-      <div className="container mx-auto px-6">
+    <section id="team" className="py-16 md:py-24 bg-white" ref={sectionRef}>
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-sm font-semibold text-[var(--gold)] uppercase tracking-wider mb-2">Our Attorneys</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-[var(--navy)] playfair mb-6">Meet Our Distinguished Team</h3>
-          <p className="text-[var(--charcoal)]">
+          <h2 className="text-xs md:text-sm font-semibold text-[var(--gold)] uppercase tracking-wider mb-2">Our Attorneys</h2>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--navy)] playfair mb-4 md:mb-6">Meet Our Distinguished Team</h3>
+          <p className="text-[var(--charcoal)] text-sm md:text-base">
             Our attorneys combine exceptional academic credentials with practical experience, delivering sophisticated legal counsel for our clients' most complex matters.
           </p>
         </motion.div>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -92,31 +92,31 @@ export default function TeamSection() {
           {attorneys.map((attorney) => (
             <motion.div 
               key={attorney.id}
-              className="group relative rounded-lg overflow-hidden shadow-lg"
+              className="group relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
               variants={itemVariants}
             >
               <div className="overflow-hidden">
                 {/* Always show placeholder since we're replacing all images */}
-                <div className="w-full h-96 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-6 transition-all duration-500 group-hover:bg-gradient-to-br">
-                  <div className="w-24 h-24 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-4">
-                    <i className="fas fa-user-tie text-[var(--gold)] text-3xl"></i>
+                <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-4 md:p-6 transition-all duration-500 group-hover:bg-gradient-to-br">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-3 md:mb-4">
+                    <i className="fas fa-user-tie text-[var(--gold)] text-2xl md:text-3xl"></i>
                   </div>
-                  <h5 className="text-lg font-semibold segoe-semibold mb-2">Coming Soon</h5>
-                  <p className="text-sm text-center text-white/70 max-w-xs">Professional headshot will be available shortly</p>
-                  <div className="mt-6 animate-pulse">
-                    <i className="fas fa-camera text-[var(--gold)] text-xl"></i>
+                  <h5 className="text-base md:text-lg font-semibold segoe-semibold mb-1 md:mb-2">Coming Soon</h5>
+                  <p className="text-xs md:text-sm text-center text-white/70 max-w-xs">Professional headshot will be available shortly</p>
+                  <div className="mt-4 md:mt-6 animate-pulse">
+                    <i className="fas fa-camera text-[var(--gold)] text-lg md:text-xl"></i>
                   </div>
                 </div>
               </div>
-              <div className="p-6 bg-white">
-                <h4 className="text-xl font-bold text-[var(--navy)] playfair">{attorney.name}</h4>
-                <p className="text-[var(--gold)] text-sm mb-3">{attorney.position}</p>
-                <p className="text-[var(--charcoal)] text-sm">{attorney.practice}</p>
+              <div className="p-4 md:p-6 bg-white">
+                <h4 className="text-lg md:text-xl font-bold text-[var(--navy)] playfair">{attorney.name}</h4>
+                <p className="text-[var(--gold)] text-xs md:text-sm mb-2 md:mb-3">{attorney.position}</p>
+                <p className="text-[var(--charcoal)] text-xs md:text-sm">{attorney.practice}</p>
               </div>
-              <div className="absolute inset-0 bg-[var(--navy)] bg-opacity-90 opacity-0 transition-opacity duration-300 p-8 flex flex-col justify-end group-hover:opacity-100">
-                <h4 className="text-xl font-bold text-white playfair">{attorney.name}</h4>
-                <p className="text-[var(--gold)] text-sm mb-4">{attorney.position}</p>
-                <p className="text-gray-200 text-sm mb-6">{attorney.bio}</p>
+              <div className="absolute inset-0 bg-[var(--navy)] bg-opacity-90 opacity-0 transition-opacity duration-300 p-4 sm:p-6 md:p-8 flex flex-col justify-end group-hover:opacity-100">
+                <h4 className="text-lg md:text-xl font-bold text-white playfair">{attorney.name}</h4>
+                <p className="text-[var(--gold)] text-xs md:text-sm mb-2 md:mb-4">{attorney.position}</p>
+                <p className="text-gray-200 text-xs md:text-sm mb-4 md:mb-6">{attorney.bio}</p>
                 <div className="flex space-x-3">
                   <a href="#" className="text-white hover:text-[var(--gold)] transition-colors duration-300">
                     <i className="fab fa-linkedin-in"></i>
@@ -131,14 +131,14 @@ export default function TeamSection() {
         </motion.div>
         
         <motion.div 
-          className="text-center mt-12"
+          className="text-center mt-8 md:mt-12"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           <button 
             onClick={() => scrollToSection("contact")}
-            className="inline-block border border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wider transition-all duration-300"
+            className="inline-block border border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white px-6 py-3 sm:px-8 sm:py-4 rounded text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300"
           >
             View All Attorneys
           </button>
