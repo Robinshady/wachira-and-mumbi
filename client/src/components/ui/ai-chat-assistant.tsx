@@ -1,16 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { apiRequest } from '@/lib/queryClient';
 
 // Types for messages
 interface Message {
   id: string;
-  text: string;
-  sender: 'bot' | 'user';
+  content: string;
+  role: 'assistant' | 'user';
   timestamp: Date;
+  loading?: boolean;
+  citations?: string[];
 }
 
 // Default greeting and suggestions
-const GREETING_MESSAGE = "Hello, I'm your legal assistant. How can I help you today?";
+const GREETING_MESSAGE = "Hello, I'm your legal assistant from Wachira & Mumbi Advocates. How can I help you today?";
 const SUGGESTIONS = [
   "What services do you offer?",
   "How can I schedule a consultation?",
@@ -23,6 +26,7 @@ export default function AIChatAssistant() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [showInitialPopup, setShowInitialPopup] = useState(true);
+  const [isTyping, setIsTyping] = useState(false);
   const messageEndRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -40,8 +44,8 @@ export default function AIChatAssistant() {
       setMessages([
         {
           id: '1',
-          text: GREETING_MESSAGE,
-          sender: 'bot',
+          content: GREETING_MESSAGE,
+          role: 'assistant',
           timestamp: new Date(),
         },
       ]);
@@ -53,47 +57,67 @@ export default function AIChatAssistant() {
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
   
-  const handleSendMessage = (text: string = inputValue) => {
-    if (!text.trim()) return;
+  const handleSendMessage = async (text: string = inputValue) => {
+    if (!text.trim() || isTyping) return;
     
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
-      text,
-      sender: 'user',
+      content: text,
+      role: 'user',
       timestamp: new Date(),
     };
     
     setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
+    setShowInitialPopup(false);
     
-    // Simulate AI processing with typing indicator
-    setTimeout(() => {
-      // Add bot response based on user query
-      // In a real app, this would call an API with the OpenAI key
-      let botResponse = "Thank you for your query. One of our legal experts will contact you shortly to provide personalized assistance.";
+    // Add typing indicator
+    setIsTyping(true);
+    
+    try {
+      // Prepare chat history for the API call
+      const chatHistory = messages.map(msg => ({
+        role: msg.role,
+        content: msg.content,
+      }));
       
-      // Simple pattern matching for demo purposes
-      if (text.toLowerCase().includes('service')) {
-        botResponse = "We offer a wide range of legal services including corporate law, intellectual property, litigation, real estate law, and more. You can find details in our Services section.";
-      } else if (text.toLowerCase().includes('consultation') || text.toLowerCase().includes('schedule') || text.toLowerCase().includes('appointment')) {
-        botResponse = "You can schedule a consultation by filling out our contact form or clicking the 'Schedule Consultation' button at the top of the page. We'll get back to you promptly.";
-      } else if (text.toLowerCase().includes('hour')) {
-        botResponse = "Our office hours are Monday to Friday, 8:00 AM to 6:00 PM. We also offer virtual consultations outside these hours by appointment.";
-      } else if (text.toLowerCase().includes('corporate') || text.toLowerCase().includes('expertise')) {
-        botResponse = "Our firm has extensive expertise in corporate law, with specialized knowledge in mergers and acquisitions, corporate governance, and regulatory compliance specific to East African markets.";
-      }
+      // Call our backend API with Perplexity integration
+      const response = await apiRequest<{text: string, citations: string[]}>('/api/chat', {
+        method: 'POST',
+        body: {
+          message: text,
+          chatHistory,
+        },
+      });
       
-      const botMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: botResponse,
-        sender: 'bot',
-        timestamp: new Date(),
-      };
+      // Add bot response
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now().toString(),
+          content: response.data.text,
+          role: 'assistant',
+          timestamp: new Date(),
+          citations: response.data.citations,
+        },
+      ]);
+    } catch (error) {
+      console.error('Error getting response from AI assistant:', error);
       
-      setMessages((prev) => [...prev, botMessage]);
-      setShowInitialPopup(false);
-    }, 1500);
+      // Add error message
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now().toString(),
+          content: "I'm sorry, I encountered an issue processing your request. Please try again later or contact our team directly.",
+          role: 'assistant',
+          timestamp: new Date(),
+        },
+      ]);
+    } finally {
+      setIsTyping(false);
+    }
   };
   
   const handleClose = () => {
@@ -194,29 +218,62 @@ export default function AIChatAssistant() {
               </div>
               
               {/* Chat messages */}
-              <div className="flex-1 p-4 overflow-y-auto bg-gray-50">
+              <div className="flex-1 p-4 overflow-y-auto bg-gray-50 relative">
                 <div className="space-y-4">
                   {messages.map((message) => (
                     <div
                       key={message.id}
-                      className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                      className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                     >
                       <div
                         className={`max-w-[80%] rounded-lg p-3 ${
-                          message.sender === 'user'
+                          message.role === 'user'
                             ? 'bg-[var(--navy)] text-white rounded-tr-none'
                             : 'bg-white shadow-sm border border-gray-200 rounded-tl-none'
                         }`}
                       >
-                        <p className={`text-sm ${message.sender === 'user' ? 'segoe-regular' : 'segoe-regular'}`}>
-                          {message.text}
+                        <p className={`text-sm ${message.role === 'user' ? 'segoe-regular' : 'segoe-regular'}`}>
+                          {message.content}
                         </p>
-                        <p className={`text-[10px] ${message.sender === 'user' ? 'text-white/60' : 'text-gray-500'} mt-1 text-right`}>
+                        
+                        {/* Citations if available */}
+                        {message.citations && message.citations.length > 0 && (
+                          <div className="mt-2 pt-2 border-t border-gray-100">
+                            <p className="text-xs text-gray-500 mb-1">Sources:</p>
+                            <ul className="text-xs text-blue-600">
+                              {message.citations.slice(0, 3).map((citation, index) => (
+                                <li key={index} className="truncate">
+                                  <a 
+                                    href={citation} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="hover:underline"
+                                  >
+                                    {citation.replace(/^https?:\/\//, '').split('/')[0]}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+                        
+                        <p className={`text-[10px] ${message.role === 'user' ? 'text-white/60' : 'text-gray-500'} mt-1 text-right`}>
                           {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </p>
                       </div>
                     </div>
                   ))}
+                  {isTyping && (
+                    <div className="flex justify-start">
+                      <div className="bg-white shadow-sm border border-gray-200 rounded-lg rounded-tl-none p-3 max-w-[80%]">
+                        <div className="flex space-x-2">
+                          <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse"></div>
+                          <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse delay-150"></div>
+                          <div className="w-2 h-2 rounded-full bg-gray-300 animate-pulse delay-300"></div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   <div ref={messageEndRef} />
                 </div>
               </div>
@@ -253,15 +310,22 @@ export default function AIChatAssistant() {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="Type your question here..."
-                    className="flex-1 border border-gray-300 rounded-l-md px-4 py-2 text-sm segoe-regular focus:outline-none focus:border-[var(--gold)]/40 focus:ring-1 focus:ring-[var(--gold)]/20"
+                    disabled={isTyping}
+                    className="flex-1 border border-gray-300 rounded-l-md px-4 py-2 text-sm segoe-regular focus:outline-none focus:border-[var(--gold)]/40 focus:ring-1 focus:ring-[var(--gold)]/20 disabled:bg-gray-50 disabled:text-gray-400"
                   />
                   <button
                     type="submit"
-                    className="bg-[var(--gold)] text-[var(--navy)] rounded-r-md px-4 py-2 hover:bg-[var(--gold-light)] transition-colors"
+                    disabled={isTyping || !inputValue.trim()}
+                    className="bg-[var(--gold)] text-[var(--navy)] rounded-r-md px-4 py-2 hover:bg-[var(--gold-light)] transition-colors disabled:bg-gray-200 disabled:text-gray-400"
                   >
                     <i className="fas fa-paper-plane"></i>
                   </button>
                 </form>
+                {isTyping && (
+                  <p className="text-xs text-gray-500 mt-1 text-center italic">
+                    Assistant is typing...
+                  </p>
+                )}
               </div>
             </div>
           </motion.div>
