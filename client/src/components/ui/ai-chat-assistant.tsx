@@ -76,11 +76,13 @@ export default function AIChatAssistant() {
     setIsTyping(true);
     
     try {
-      // Prepare chat history for the API call
-      const chatHistory = messages.map(msg => ({
-        role: msg.role,
-        content: msg.content,
-      }));
+      // Prepare chat history for the API call - skip the initial greeting
+      const chatHistory = messages
+        .filter((msg, index) => index !== 0 || msg.role !== 'assistant') // Skip initial greeting
+        .map(msg => ({
+          role: msg.role,
+          content: msg.content,
+        }));
       
       // Call our backend API with Perplexity integration
       const response = await apiRequest(

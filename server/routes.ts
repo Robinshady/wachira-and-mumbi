@@ -88,23 +88,57 @@ export async function registerRoutes(app: Express): Promise<Server> {
         }
       ];
       
-      // Add chat history if provided
+      // Format messages to ensure proper alternation between user and assistant
+      let formattedMessages = [];
+      
+      // Add chat history if provided, ensuring alternating pattern
       if (chatHistory && Array.isArray(chatHistory)) {
-        chatHistory.forEach(msg => {
+        // Find the last role to ensure we don't have repeated roles
+        let lastRole = 'system';
+        
+        // Process each message in order
+        for (const msg of chatHistory) {
+          // Skip if the role is the same as the last one to maintain alternation
+          if (msg.role === lastRole) {
+            continue;
+          }
+          
+          // Add the message if it's a valid role
           if (msg.role === 'user' || msg.role === 'assistant') {
-            messages.push({
+            formattedMessages.push({
               role: msg.role,
               content: msg.content
             });
+            
+            lastRole = msg.role;
           }
+        }
+      }
+      
+      // Add messages to the main array
+      messages.push(...formattedMessages);
+      
+      // Ensure proper alternation of messages ending with user message
+      const lastMessage = messages.length > 1 ? messages[messages.length - 1] : null;
+      
+      // If there's only the system message, or the last message is from assistant
+      if (messages.length === 1 || (lastMessage && lastMessage.role === 'assistant')) {
+        messages.push({
+          role: "user",
+          content: message
+        });
+      } 
+      // If the last message is already from user, we need to replace it
+      else if (lastMessage && lastMessage.role === 'user') {
+        // Remove the last message and add the current one
+        messages.pop();
+        messages.push({
+          role: "user",
+          content: message
         });
       }
       
-      // Add the current user message
-      messages.push({
-        role: "user",
-        content: message
-      });
+      console.log("Final messages structure:", JSON.stringify(messages));
       
       const response = await fetch(perplexityApiUrl, {
         method: 'POST',
