@@ -30,9 +30,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="text-white text-2xl font-bold flex items-center">
-              <span className="playfair font-semibold mr-1">Harrison</span>
-              <span className="text-[var(--gold)]">&</span>
-              <span className="playfair font-semibold ml-1">Associates</span>
+              <div className="flex flex-col">
+                <div className="flex items-baseline">
+                  <span className="playfair font-semibold mr-1 text-2xl md:text-3xl">Wachira</span>
+                  <span className="text-[var(--gold)] mx-1 text-xl md:text-2xl">&</span>
+                  <span className="playfair font-semibold ml-1 text-2xl md:text-3xl">Mumbi</span>
+                </div>
+                <span className="text-[var(--gold)] text-xs md:text-sm tracking-widest uppercase font-light">Advocates of the High Court</span>
+              </div>
             </Link>
           </div>
           

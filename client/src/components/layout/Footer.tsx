@@ -50,14 +50,31 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between mb-12">
           <div className="mb-8 md:mb-0">
-            <a href="#" className="text-white text-2xl font-bold flex items-center mb-4">
-              <span className="playfair font-semibold mr-1">Harrison</span>
-              <span className="text-[var(--gold)]">&</span>
-              <span className="playfair font-semibold ml-1">Associates</span>
+            <a href="#" className="text-white text-2xl font-bold flex items-start mb-6">
+              <div className="flex flex-col">
+                <div className="flex items-baseline">
+                  <span className="playfair font-semibold mr-1 text-2xl">Wachira</span>
+                  <span className="text-[var(--gold)] mx-1 text-xl">&</span>
+                  <span className="playfair font-semibold ml-1 text-2xl">Mumbi</span>
+                </div>
+                <span className="text-[var(--gold)] text-xs tracking-widest uppercase font-light">Advocates of the High Court</span>
+              </div>
             </a>
-            <p className="text-gray-400 text-sm max-w-xs">
-              Sophisticated legal counsel for discerning clients, delivering exceptional results since 1985.
+            <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
+              Delivering sophisticated legal counsel with integrity and excellence. Proudly serving clients throughout Kenya with distinction since 2005.
             </p>
+            
+            <div className="flex space-x-4 mt-6">
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[var(--gold)] text-white flex items-center justify-center transition-colors duration-300">
+                <i className="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[var(--gold)] text-white flex items-center justify-center transition-colors duration-300">
+                <i className="fab fa-twitter"></i>
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[var(--gold)] text-white flex items-center justify-center transition-colors duration-300">
+                <i className="fab fa-facebook-f"></i>
+              </a>
+            </div>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
@@ -76,12 +93,12 @@ export default function Footer() {
             <div>
               <h5 className="text-[var(--gold)] font-semibold mb-4">Practice Areas</h5>
               <ul className="space-y-2">
-                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Corporate Law</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Litigation</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Real Estate</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Estate Planning</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Tax Law</a></li>
-                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Intellectual Property</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Corporate & Commercial</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Civil Litigation</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Conveyancing & Property</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Employment Law</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Constitutional Law</a></li>
+                <li><a href="#services" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Family Law & Succession</a></li>
               </ul>
             </div>
             
@@ -113,7 +130,7 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Harrison & Associates. All rights reserved.
+            &copy; {new Date().getFullYear()} Wachira & Mumbi Advocates. All rights reserved.
           </div>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Privacy Policy</a>
