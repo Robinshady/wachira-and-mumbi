@@ -216,9 +216,9 @@ export default function AIChatAssistant() {
         )}
       </AnimatePresence>
       
-      {/* Chat button that toggles the chat interface (hidden when in fullscreen) */}
+      {/* Chat button that toggles the chat interface (hidden when in fullscreen) - Moved to left side */}
       {!isFullscreen && (
-        <div className="fixed right-6 bottom-6 z-50">
+        <div className="fixed left-6 bottom-6 z-50">
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
             className="w-14 h-14 rounded-full bg-[var(--gold)] shadow-lg flex items-center justify-center hover:bg-[var(--gold-light)] transition-colors duration-300"
@@ -241,7 +241,7 @@ export default function AIChatAssistant() {
             className={`fixed z-50 ${
               isFullscreen 
                 ? 'inset-0 m-0'
-                : 'right-6 bottom-24 w-full max-w-md'
+                : 'left-6 bottom-24 w-full max-w-md'
             }`}
           >
             <div className={`bg-white shadow-2xl border border-[var(--gold)]/10 overflow-hidden flex flex-col ${

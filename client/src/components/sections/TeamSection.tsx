@@ -2,30 +2,41 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-const attorneys = [
+// Define the attorney interface
+interface Attorney {
+  id: number;
+  name: string;
+  position: string;
+  practice: string;
+  bio: string;
+  image?: string; // Optional now
+  imagePlaceholder?: string; // Optional placeholder flag
+}
+
+const attorneys: Attorney[] = [
   {
     id: 1,
-    name: "James Harrison",
+    name: "James Wachira",
     position: "Managing Partner",
     practice: "Corporate Law, Mergers & Acquisitions",
-    bio: "With over 25 years of experience, James leads complex corporate transactions and has been recognized by Chambers & Partners for excellence in M&A.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80"
+    bio: "With over 25 years of experience, James leads complex corporate transactions and has been recognized for excellence in Kenyan corporate law and cross-border transactions.",
+    imagePlaceholder: "true"
   },
   {
     id: 2,
-    name: "Elizabeth Chen",
+    name: "Catherine Mumbi",
     position: "Senior Partner",
     practice: "Litigation, Commercial Disputes",
-    bio: "A formidable litigator with an exceptional track record in high-stakes commercial disputes and a former clerk for the U.S. Supreme Court.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=776&q=80"
+    bio: "A formidable litigator with an exceptional track record in high-stakes commercial disputes and a recognized expert in Kenyan constitutional law.",
+    imagePlaceholder: "true"
   },
   {
     id: 3,
-    name: "Michael Reynolds",
+    name: "Daniel Kimathi",
     position: "Partner",
     practice: "Real Estate, Finance",
-    bio: "Specializing in complex real estate transactions and financing, Michael brings invaluable expertise from his previous role as general counsel for a major developer.",
-    image: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80"
+    bio: "Specializing in complex real estate transactions and financing throughout Kenya, Daniel brings invaluable expertise from his previous role as legal advisor to major property developers.",
+    imagePlaceholder: "true"
   }
 ];
 
@@ -85,11 +96,17 @@ export default function TeamSection() {
               variants={itemVariants}
             >
               <div className="overflow-hidden">
-                <img 
-                  src={attorney.image}
-                  alt={attorney.name} 
-                  className="w-full h-96 object-cover object-center transition-transform duration-500 group-hover:scale-105" 
-                />
+                {/* Always show placeholder since we're replacing all images */}
+                <div className="w-full h-96 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-6 transition-all duration-500 group-hover:bg-gradient-to-br">
+                  <div className="w-24 h-24 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-4">
+                    <i className="fas fa-user-tie text-[var(--gold)] text-3xl"></i>
+                  </div>
+                  <h5 className="text-lg font-semibold segoe-semibold mb-2">Coming Soon</h5>
+                  <p className="text-sm text-center text-white/70 max-w-xs">Professional headshot will be available shortly</p>
+                  <div className="mt-6 animate-pulse">
+                    <i className="fas fa-camera text-[var(--gold)] text-xl"></i>
+                  </div>
+                </div>
               </div>
               <div className="p-6 bg-white">
                 <h4 className="text-xl font-bold text-[var(--navy)] playfair">{attorney.name}</h4>
