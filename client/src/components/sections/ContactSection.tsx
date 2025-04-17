@@ -198,7 +198,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h5 className="font-bold text-white mb-1">Main Office</h5>
-                      <p className="text-sm text-gray-300">One Prestige Plaza, Suite 2800<br />New York, NY 10022</p>
+                      <p className="text-sm text-gray-300">ACK Garden House, Floor 2, Wing C.,<br />1st Ngong Avenue - Off Ngong Road,<br />Community Upperhill.</p>
                     </div>
                   </div>
                   
@@ -208,7 +208,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h5 className="font-bold text-white mb-1">Phone</h5>
-                      <p className="text-sm text-gray-300">(212) 555-0123</p>
+                      <p className="text-sm text-gray-300">0741 647 831</p>
                     </div>
                   </div>
                   
@@ -218,7 +218,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h5 className="font-bold text-white mb-1">Email</h5>
-                      <p className="text-sm text-gray-300">inquiries@harrisonlaw.com</p>
+                      <p className="text-sm text-gray-300">info@wachiramumbilaw.com</p>
                     </div>
                   </div>
                   
@@ -228,7 +228,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <h5 className="font-bold text-white mb-1">Hours</h5>
-                      <p className="text-sm text-gray-300">Monday - Friday: 8:00 AM - 6:00 PM<br />Weekend: By appointment only</p>
+                      <p className="text-sm text-gray-300">Monday - Friday: 8:00 AM - 5:00 PM<br />Weekend: By appointment only</p>
                     </div>
                   </div>
                 </div>

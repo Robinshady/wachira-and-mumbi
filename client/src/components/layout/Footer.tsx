@@ -60,9 +60,20 @@ export default function Footer() {
                 <span className="text-[var(--gold)] text-xs tracking-widest uppercase font-light">Advocates of the High Court</span>
               </div>
             </a>
-            <p className="text-gray-400 text-sm max-w-xs leading-relaxed">
-              Delivering sophisticated legal counsel with integrity and excellence. Proudly serving clients throughout Kenya with distinction since 2005.
-            </p>
+            <div className="space-y-2 mt-4">
+              <div className="flex items-center">
+                <i className="fas fa-phone-alt text-[var(--gold)] mr-3 w-5 text-center"></i>
+                <p className="text-gray-300 text-sm">0741 647 831</p>
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-envelope text-[var(--gold)] mr-3 w-5 text-center"></i>
+                <p className="text-gray-300 text-sm">info@wachiramumbilaw.com</p>
+              </div>
+              <div className="flex items-start">
+                <i className="fas fa-map-marker-alt text-[var(--gold)] mr-3 w-5 text-center mt-1"></i>
+                <p className="text-gray-300 text-sm">ACK Garden House, Floor 2, Wing C.,<br/>1st Ngong Avenue - Off Ngong Road,<br/>Community Upperhill.</p>
+              </div>
+            </div>
             
             <div className="flex space-x-4 mt-6">
               <a href="#" className="w-10 h-10 rounded-full bg-gray-800 hover:bg-[var(--gold)] text-white flex items-center justify-center transition-colors duration-300">
@@ -130,7 +141,7 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} Wachira & Mumbi Advocates. All rights reserved.
+            Wachira and Mumbi Advocates© 2024. All Rights Reserved
           </div>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-[var(--gold)] text-sm transition-colors duration-300">Privacy Policy</a>
