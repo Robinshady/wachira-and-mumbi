@@ -248,12 +248,11 @@
   line-height: 1;
 }
 
-/* Background images with stronger contrast and visibility */
+/* Gradient background replacements for images */
 .bg-hero-pattern {
-  background-image: linear-gradient(rgba(10, 25, 50, 0.75), rgba(10, 25, 50, 0.75)), url('https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, var(--navy-lighter) 100%);
   position: relative;
+  overflow: hidden;
 }
 
 .bg-hero-pattern::before {
@@ -267,16 +266,31 @@
   z-index: 1;
 }
 
+.bg-hero-pattern::after {
+  content: 'Image Coming Soon';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
 .bg-hero-pattern > * {
   position: relative;
   z-index: 2;
 }
 
 .bg-parallax-bg {
-  background-image: linear-gradient(rgba(5, 20, 40, 0.65), rgba(5, 20, 40, 0.65)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, var(--navy-lighter) 0%, var(--navy-light) 50%, var(--navy) 100%);
   position: relative;
+  overflow: hidden;
 }
 
 .bg-parallax-bg::before {
@@ -287,6 +301,22 @@
   width: 100%;
   height: 100%;
   background: radial-gradient(circle at center, rgba(5, 20, 40, 0.2) 0%, rgba(5, 15, 30, 0.6) 100%);
+  z-index: 1;
+}
+
+.bg-parallax-bg::after {
+  content: 'Image Coming Soon';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
   z-index: 1;
 }
 

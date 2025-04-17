@@ -249,12 +249,15 @@ export default function ContactSection() {
                 </div>
               </div>
               
-              <div className="rounded-lg overflow-hidden shadow-lg h-64 lg:h-80">
-                <img 
-                  src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1174&q=80" 
-                  alt="Law firm building" 
-                  className="w-full h-full object-cover" 
-                />
+              <div className="rounded-lg overflow-hidden shadow-lg h-64 lg:h-80 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-6">
+                <div className="w-20 h-20 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-4">
+                  <i className="fas fa-map-marked-alt text-[var(--gold)] text-3xl"></i>
+                </div>
+                <h5 className="text-lg font-semibold segoe-semibold mb-2">Image Coming Soon</h5>
+                <p className="text-sm text-center text-white/70 max-w-xs">Building photo will be available shortly</p>
+                <div className="mt-6 animate-pulse">
+                  <i className="fas fa-camera text-[var(--gold)] text-xl"></i>
+                </div>
               </div>
             </div>
           </motion.div>

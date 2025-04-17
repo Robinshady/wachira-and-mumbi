@@ -29,15 +29,19 @@ export default function AboutSection() {
               <div className="absolute top-0 left-0 w-1/3 h-1 bg-[var(--gold)] z-20"></div>
               <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-[var(--gold)] z-20"></div>
               
-              {/* Main image */}
-              <img 
-                src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80" 
-                alt="Wachira & Mumbi Advocates Office" 
-                className="w-full h-auto rounded shadow-xl relative z-10" 
-              />
+              {/* Image placeholder */}
+              <div className="w-full aspect-video rounded shadow-xl relative z-10 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-6">
+                <div className="w-20 h-20 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-4">
+                  <i className="fas fa-building text-[var(--gold)] text-3xl"></i>
+                </div>
+                <h5 className="text-lg font-semibold segoe-semibold mb-2">Image Coming Soon</h5>
+                <p className="text-sm text-center text-white/70 max-w-xs">Professional photography will be available shortly</p>
+                <div className="mt-6 animate-pulse">
+                  <i className="fas fa-camera text-[var(--gold)] text-xl"></i>
+                </div>
+              </div>
               
-              {/* Premium overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[var(--navy)]/20 to-transparent z-10 rounded"></div>
+              {/* No need for premium overlay as it's built into the placeholder */}
               
               {/* Floating info box */}
               <div className="absolute -bottom-5 -right-5 bg-white p-4 shadow-lg rounded z-20 max-w-[200px]">
