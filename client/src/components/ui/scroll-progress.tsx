@@ -36,9 +36,9 @@ export default function ScrollProgress() {
   return (
     <div className="fixed bottom-8 right-8 z-40 flex items-center">
       {/* Progress indicator */}
-      <div className="relative w-12 h-12 mr-4 rounded-full overflow-hidden bg-white/10 backdrop-blur-sm shadow-lg">
+      <div className="relative w-12 h-12 mr-4 rounded-full overflow-hidden bg-white/10 backdrop-blur-sm shadow-lg border border-[var(--gold)]/20">
         <motion.div
-          className="absolute inset-1 bg-gradient-to-r from-[var(--gold)] to-[var(--gold)]/80 rounded-full origin-center"
+          className="absolute inset-1 bg-gradient-to-r from-[var(--gold)] to-[var(--gold)]/70 rounded-full origin-center"
           style={{
             pathLength: scrollYProgress,
             rotate: 270,
@@ -57,7 +57,7 @@ export default function ScrollProgress() {
       
       {/* Text indicator */}
       <motion.div 
-        className="bg-white/5 text-[var(--gold)] py-2 px-4 rounded-full backdrop-blur-md border border-white/10 shadow-lg font-light text-sm tracking-wide"
+        className="bg-white/5 text-[var(--gold)] py-2 px-4 rounded-full backdrop-blur-md border border-[var(--gold)]/20 shadow-lg font-light text-sm tracking-wide"
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}
