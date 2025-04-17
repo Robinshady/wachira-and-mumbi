@@ -167,7 +167,7 @@ export default function HeroSection() {
         </motion.div>
         
         {/* Premium text animation with dramatic transitions */}
-        <div className="h-36 mb-8 flex flex-col items-center justify-center overflow-hidden">
+        <div className="h-auto mb-16 pt-4 flex flex-col items-center justify-center relative">
           {/* Dynamic line separator */}
           <motion.div 
             className="w-20 h-px bg-[var(--gold)]/30 mb-6"
@@ -180,7 +180,7 @@ export default function HeroSection() {
           <AnimatePresence mode="wait">
             <motion.h1
               key={currentTextIndex}
-              className="hero-title text-white mb-2"
+              className="hero-title text-white mb-8"
               initial={{ opacity: 0, y: 40, filter: "blur(8px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, y: -40, filter: "blur(8px)" }}
@@ -190,23 +190,29 @@ export default function HeroSection() {
             </motion.h1>
           </AnimatePresence>
           
-          <motion.h2 
-            className="segoe-semibold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight mt-4 relative z-10"
-            initial={{ opacity: 0, letterSpacing: "0.1em" }}
-            animate={{ opacity: 1, letterSpacing: "-0.02em" }}
+          {/* IN LEGAL PRACTICE with enhanced visibility */}
+          <motion.div
+            className="relative mb-8"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 1.2 }}
           >
-            <span className="relative z-10 inline-block px-6 py-2">
-              <span className="relative z-10">IN LEGAL PRACTICE</span>
-              {/* Background highlight for better visibility */}
-              <span className="absolute inset-0 bg-[var(--navy)]/80 backdrop-blur-sm -z-10 rounded-lg"></span>
-              <span className="absolute inset-0 border border-[var(--gold)]/10 rounded-lg -z-10"></span>
-              {/* Top accent line */}
-              <span className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/30 to-transparent -z-10"></span>
-              {/* Bottom accent line */}
-              <span className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/30 to-transparent -z-10"></span>
-            </span>
-          </motion.h2>
+            <div className="px-10 py-6 bg-[var(--navy)]/70 backdrop-blur-md rounded-lg border border-[var(--gold)]/10 shadow-lg">
+              <h2 className="segoe-semibold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight">
+                IN LEGAL PRACTICE
+              </h2>
+              
+              {/* Decorative lines */}
+              <div className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/50 to-transparent"></div>
+              <div className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/50 to-transparent"></div>
+              
+              {/* Corner accents */}
+              <div className="absolute top-0 left-0 w-4 h-4 border-t border-l border-[var(--gold)]/30 rounded-tl-sm"></div>
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-[var(--gold)]/30 rounded-tr-sm"></div>
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-[var(--gold)]/30 rounded-bl-sm"></div>
+              <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-[var(--gold)]/30 rounded-br-sm"></div>
+            </div>
+          </motion.div>
         </div>
         
         {/* Sophisticated description */}
