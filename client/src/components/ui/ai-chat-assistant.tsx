@@ -83,23 +83,26 @@ export default function AIChatAssistant() {
       }));
       
       // Call our backend API with Perplexity integration
-      const response = await apiRequest<{text: string, citations: string[]}>('/api/chat', {
-        method: 'POST',
-        body: {
+      const response = await apiRequest(
+        'POST',
+        '/api/chat',
+        {
           message: text,
           chatHistory,
-        },
-      });
+        }
+      );
       
-      // Add bot response
+      // Parse the response and add bot response
+      const responseData = await response.json();
+      
       setMessages((prev) => [
         ...prev,
         {
           id: Date.now().toString(),
-          content: response.data.text,
+          content: responseData.data.text,
           role: 'assistant',
           timestamp: new Date(),
-          citations: response.data.citations,
+          citations: responseData.data.citations,
         },
       ]);
     } catch (error) {
