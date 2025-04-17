@@ -26,7 +26,7 @@ link4.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.
 document.head.appendChild(link4);
 
 const title = document.createElement("title");
-title.textContent = "Harrison & Associates | Premium Law Firm";
+title.textContent = "Wachira & Mumbi Advocates | Kenyan Law Firm";
 document.head.appendChild(title);
 
 createRoot(document.getElementById("root")!).render(<App />);
