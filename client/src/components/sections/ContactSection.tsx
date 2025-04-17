@@ -51,22 +51,22 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[var(--light-gray)]" ref={sectionRef}>
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-16 md:py-24 bg-[var(--light-gray)]" ref={sectionRef}>
+      <div className="container mx-auto px-4 md:px-6">
         <motion.div 
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-sm font-semibold text-[var(--gold)] uppercase tracking-wider mb-2">Get In Touch</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-[var(--navy)] playfair mb-6">Schedule a Consultation</h3>
-          <p className="text-[var(--charcoal)]">
+          <h2 className="text-xs md:text-sm font-semibold text-[var(--gold)] uppercase tracking-wider mb-2">Get In Touch</h2>
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--navy)] playfair mb-4 md:mb-6">Schedule a Consultation</h3>
+          <p className="text-[var(--charcoal)] text-sm md:text-base">
             Our team is ready to provide the sophisticated legal counsel your matter deserves. Contact us to discuss how we can help achieve your objectives.
           </p>
         </motion.div>
         
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12">
           <motion.div 
             className="lg:w-1/2"
             initial={{ opacity: 0, x: -30 }}
@@ -74,27 +74,27 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <form 
-              className="bg-white p-8 rounded-lg shadow-lg" 
+              className="bg-white p-5 sm:p-6 md:p-8 rounded-lg shadow-lg" 
               onSubmit={handleSubmit(onSubmit)}
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-[var(--charcoal)] mb-2">First Name</label>
+                  <label htmlFor="firstName" className="block text-xs sm:text-sm font-medium text-[var(--charcoal)] mb-1 sm:mb-2">First Name</label>
                   <input 
                     type="text" 
                     id="firstName" 
-                    className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.firstName ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.firstName ? 'border-red-500' : 'border-gray-300'}`}
                     placeholder="Your first name" 
                     {...register("firstName")}
                   />
                   {errors.firstName && <p className="mt-1 text-red-500 text-xs">{errors.firstName.message}</p>}
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-[var(--charcoal)] mb-2">Last Name</label>
+                  <label htmlFor="lastName" className="block text-xs sm:text-sm font-medium text-[var(--charcoal)] mb-1 sm:mb-2">Last Name</label>
                   <input 
                     type="text" 
                     id="lastName" 
-                    className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.lastName ? 'border-red-500' : 'border-gray-300'}`}
+                    className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.lastName ? 'border-red-500' : 'border-gray-300'}`}
                     placeholder="Your last name" 
                     {...register("lastName")}
                   />
@@ -102,35 +102,35 @@ export default function ContactSection() {
                 </div>
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium text-[var(--charcoal)] mb-2">Email Address</label>
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-[var(--charcoal)] mb-1 sm:mb-2">Email Address</label>
                 <input 
                   type="email" 
                   id="email" 
-                  className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
                   placeholder="Your email address" 
                   {...register("email")}
                 />
                 {errors.email && <p className="mt-1 text-red-500 text-xs">{errors.email.message}</p>}
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="phone" className="block text-sm font-medium text-[var(--charcoal)] mb-2">Phone Number</label>
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-[var(--charcoal)] mb-1 sm:mb-2">Phone Number</label>
                 <input 
                   type="tel" 
                   id="phone" 
-                  className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.phone ? 'border-red-500' : 'border-gray-300'}`}
                   placeholder="Your phone number" 
                   {...register("phone")}
                 />
                 {errors.phone && <p className="mt-1 text-red-500 text-xs">{errors.phone.message}</p>}
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="service" className="block text-sm font-medium text-[var(--charcoal)] mb-2">Service of Interest</label>
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="service" className="block text-xs sm:text-sm font-medium text-[var(--charcoal)] mb-1 sm:mb-2">Service of Interest</label>
                 <select 
                   id="service" 
-                  className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.service ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.service ? 'border-red-500' : 'border-gray-300'}`}
                   {...register("service")}
                 >
                   <option value="" disabled>Select a service</option>
@@ -145,26 +145,26 @@ export default function ContactSection() {
                 {errors.service && <p className="mt-1 text-red-500 text-xs">{errors.service.message}</p>}
               </div>
               
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-[var(--charcoal)] mb-2">Your Message</label>
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-[var(--charcoal)] mb-1 sm:mb-2">Your Message</label>
                 <textarea 
                   id="message" 
                   rows={4} 
-                  className={`w-full px-4 py-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+                  className={`w-full px-3 sm:px-4 py-2 sm:py-3 text-sm border rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--gold)] focus:border-transparent transition-all duration-300 ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
                   placeholder="Please briefly describe your legal matter"
                   {...register("message")}
                 ></textarea>
                 {errors.message && <p className="mt-1 text-red-500 text-xs">{errors.message.message}</p>}
               </div>
               
-              <div className="mb-6">
-                <label className="inline-flex items-center">
+              <div className="mb-4 sm:mb-6">
+                <label className="inline-flex items-start sm:items-center">
                   <input 
                     type="checkbox" 
-                    className={`form-checkbox rounded focus:ring-[var(--gold)] h-5 w-5 ${errors.privacy ? 'border-red-500' : ''}`}
+                    className={`form-checkbox rounded focus:ring-[var(--gold)] h-4 w-4 sm:h-5 sm:w-5 mt-0.5 sm:mt-0 ${errors.privacy ? 'border-red-500' : ''}`}
                     {...register("privacy")}
                   />
-                  <span className="ml-2 text-sm text-[var(--charcoal)]">
+                  <span className="ml-2 text-xs sm:text-sm text-[var(--charcoal)]">
                     I agree to the <a href="#" className="text-[var(--gold)] hover:underline">privacy policy</a> and consent to being contacted regarding my inquiry.
                   </span>
                 </label>
@@ -173,7 +173,7 @@ export default function ContactSection() {
               
               <button 
                 type="submit" 
-                className="w-full bg-[var(--gold)] hover:bg-opacity-90 text-[var(--navy)] px-8 py-4 rounded text-sm font-semibold uppercase tracking-wider transition-all duration-300 shadow-md disabled:bg-opacity-50"
+                className="w-full bg-[var(--gold)] hover:bg-opacity-90 text-[var(--navy)] px-6 sm:px-8 py-3 sm:py-4 rounded text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300 shadow-md disabled:bg-opacity-50"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Submitting..." : "Submit Inquiry"}
@@ -188,75 +188,75 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className="h-full flex flex-col">
-              <div className="bg-[var(--navy)] p-8 rounded-lg shadow-lg mb-6 flex-grow">
-                <h4 className="text-xl font-bold text-white playfair mb-6">Contact Information</h4>
+              <div className="bg-[var(--navy)] p-5 sm:p-6 md:p-8 rounded-lg shadow-lg mb-4 sm:mb-6 flex-grow">
+                <h4 className="text-lg md:text-xl font-bold text-white playfair mb-4 md:mb-6">Contact Information</h4>
                 
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 mr-4 text-[var(--gold)]">
-                      <i className="fas fa-map-marker-alt text-xl"></i>
+                    <div className="flex-shrink-0 mr-3 md:mr-4 text-[var(--gold)]">
+                      <i className="fas fa-map-marker-alt text-lg md:text-xl"></i>
                     </div>
                     <div>
-                      <h5 className="font-bold text-white mb-1">Main Office</h5>
-                      <p className="text-sm text-gray-300">ACK Garden House, Floor 2, Wing C.,<br />1st Ngong Avenue - Off Ngong Road,<br />Community Upperhill.</p>
+                      <h5 className="font-bold text-white text-sm md:text-base mb-0.5 md:mb-1">Main Office</h5>
+                      <p className="text-xs md:text-sm text-gray-300">ACK Garden House, Floor 2, Wing C.,<br />1st Ngong Avenue - Off Ngong Road,<br />Community Upperhill.</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 mr-4 text-[var(--gold)]">
-                      <i className="fas fa-phone-alt text-xl"></i>
+                    <div className="flex-shrink-0 mr-3 md:mr-4 text-[var(--gold)]">
+                      <i className="fas fa-phone-alt text-lg md:text-xl"></i>
                     </div>
                     <div>
-                      <h5 className="font-bold text-white mb-1">Phone</h5>
-                      <p className="text-sm text-gray-300">0741 647 831</p>
+                      <h5 className="font-bold text-white text-sm md:text-base mb-0.5 md:mb-1">Phone</h5>
+                      <p className="text-xs md:text-sm text-gray-300">0741 647 831</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 mr-4 text-[var(--gold)]">
-                      <i className="fas fa-envelope text-xl"></i>
+                    <div className="flex-shrink-0 mr-3 md:mr-4 text-[var(--gold)]">
+                      <i className="fas fa-envelope text-lg md:text-xl"></i>
                     </div>
                     <div>
-                      <h5 className="font-bold text-white mb-1">Email</h5>
-                      <p className="text-sm text-gray-300">info@wachiramumbilaw.com</p>
+                      <h5 className="font-bold text-white text-sm md:text-base mb-0.5 md:mb-1">Email</h5>
+                      <p className="text-xs md:text-sm text-gray-300">info@wachiramumbilaw.com</p>
                     </div>
                   </div>
                   
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 mr-4 text-[var(--gold)]">
-                      <i className="fas fa-clock text-xl"></i>
+                    <div className="flex-shrink-0 mr-3 md:mr-4 text-[var(--gold)]">
+                      <i className="fas fa-clock text-lg md:text-xl"></i>
                     </div>
                     <div>
-                      <h5 className="font-bold text-white mb-1">Hours</h5>
-                      <p className="text-sm text-gray-300">Monday - Friday: 8:00 AM - 5:00 PM<br />Weekend: By appointment only</p>
+                      <h5 className="font-bold text-white text-sm md:text-base mb-0.5 md:mb-1">Hours</h5>
+                      <p className="text-xs md:text-sm text-gray-300">Monday - Friday: 8:00 AM - 5:00 PM<br />Weekend: By appointment only</p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="mt-8">
-                  <h5 className="font-bold text-white mb-4">Connect With Us</h5>
+                <div className="mt-6 md:mt-8">
+                  <h5 className="font-bold text-white text-sm md:text-base mb-3 md:mb-4">Connect With Us</h5>
                   <div className="flex space-x-4">
                     <a href="#" className="text-gray-300 hover:text-[var(--gold)] transition-colors duration-300">
-                      <i className="fab fa-linkedin-in text-xl"></i>
+                      <i className="fab fa-linkedin-in text-lg md:text-xl"></i>
                     </a>
                     <a href="#" className="text-gray-300 hover:text-[var(--gold)] transition-colors duration-300">
-                      <i className="fab fa-twitter text-xl"></i>
+                      <i className="fab fa-twitter text-lg md:text-xl"></i>
                     </a>
                     <a href="#" className="text-gray-300 hover:text-[var(--gold)] transition-colors duration-300">
-                      <i className="fab fa-facebook-f text-xl"></i>
+                      <i className="fab fa-facebook-f text-lg md:text-xl"></i>
                     </a>
                   </div>
                 </div>
               </div>
               
-              <div className="rounded-lg overflow-hidden shadow-lg h-64 lg:h-80 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-6">
-                <div className="w-20 h-20 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-4">
-                  <i className="fas fa-map-marked-alt text-[var(--gold)] text-3xl"></i>
+              <div className="rounded-lg overflow-hidden shadow-lg h-56 sm:h-64 lg:h-80 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-4 sm:p-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-3 sm:mb-4">
+                  <i className="fas fa-map-marked-alt text-[var(--gold)] text-2xl sm:text-3xl"></i>
                 </div>
-                <h5 className="text-lg font-semibold segoe-semibold mb-2">Image Coming Soon</h5>
-                <p className="text-sm text-center text-white/70 max-w-xs">Building photo will be available shortly</p>
-                <div className="mt-6 animate-pulse">
-                  <i className="fas fa-camera text-[var(--gold)] text-xl"></i>
+                <h5 className="text-base sm:text-lg font-semibold segoe-semibold mb-1 sm:mb-2">Image Coming Soon</h5>
+                <p className="text-xs sm:text-sm text-center text-white/70 max-w-xs">Building photo will be available shortly</p>
+                <div className="mt-4 sm:mt-6 animate-pulse">
+                  <i className="fas fa-camera text-[var(--gold)] text-lg sm:text-xl"></i>
                 </div>
               </div>
             </div>
