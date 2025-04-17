@@ -295,7 +295,7 @@ export default function AIChatAssistant() {
                             : 'bg-white shadow-sm border border-gray-200 rounded-tl-none'
                         }`}
                       >
-                        <p className={`text-base leading-relaxed ${message.role === 'user' ? 'segoe-regular' : 'segoe-regular'}`}>
+                        <p className={`text-base leading-relaxed ${message.role === 'user' ? 'segoe-regular text-white' : 'segoe-regular'}`}>
                           {message.content}
                         </p>
                         
