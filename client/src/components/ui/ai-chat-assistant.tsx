@@ -28,7 +28,9 @@ export default function AIChatAssistant() {
   const [inputValue, setInputValue] = useState('');
   const [showInitialPopup, setShowInitialPopup] = useState(true);
   const [isTyping, setIsTyping] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
   const messageEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   
   useEffect(() => {
     // Show the chatbot after a small delay when the user lands on the page
@@ -57,6 +59,39 @@ export default function AIChatAssistant() {
     // Scroll to bottom of chat when new messages appear
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
+  
+  // Add keyboard support for escaping fullscreen mode with ESC key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        setIsFullscreen(false);
+      }
+      
+      // Focus the input field when "/" key is pressed and chat is open
+      if (e.key === '/' && isOpen && !isTyping && 
+          // Don't focus if user is already typing in an input field
+          document.activeElement?.tagName !== 'INPUT' && 
+          document.activeElement?.tagName !== 'TEXTAREA') {
+        e.preventDefault(); // Prevent the "/" character from being typed
+        inputRef.current?.focus();
+      }
+    };
+    
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFullscreen, isOpen, isTyping]);
+  
+  // Focus input when chat opens or when fullscreen mode changes
+  useEffect(() => {
+    if (isOpen && !isTyping) {
+      // Small timeout to ensure DOM is ready
+      const focusTimer = setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
+      
+      return () => clearTimeout(focusTimer);
+    }
+  }, [isOpen, isFullscreen, isTyping]);
   
   const handleSendMessage = async (text: string = inputValue) => {
     if (!text.trim() || isTyping) return;
@@ -181,17 +216,19 @@ export default function AIChatAssistant() {
         )}
       </AnimatePresence>
       
-      {/* Chat button that toggles the chat interface */}
-      <div className="fixed right-6 bottom-6 z-50">
-        <motion.button
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full bg-[var(--gold)] shadow-lg flex items-center justify-center hover:bg-[var(--gold-light)] transition-colors duration-300"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <i className={`fas ${isOpen ? 'fa-times' : 'fa-comment'} text-[var(--navy)]`}></i>
-        </motion.button>
-      </div>
+      {/* Chat button that toggles the chat interface (hidden when in fullscreen) */}
+      {!isFullscreen && (
+        <div className="fixed right-6 bottom-6 z-50">
+          <motion.button
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-14 h-14 rounded-full bg-[var(--gold)] shadow-lg flex items-center justify-center hover:bg-[var(--gold-light)] transition-colors duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <i className={`fas ${isOpen ? 'fa-times' : 'fa-comment'} text-[var(--navy)]`}></i>
+          </motion.button>
+        </div>
+      )}
       
       {/* Main chat interface */}
       <AnimatePresence>
@@ -201,9 +238,17 @@ export default function AIChatAssistant() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed right-6 bottom-24 z-50 w-full max-w-md"
+            className={`fixed z-50 ${
+              isFullscreen 
+                ? 'inset-0 m-0'
+                : 'right-6 bottom-24 w-full max-w-md'
+            }`}
           >
-            <div className="bg-white rounded-lg shadow-2xl border border-[var(--gold)]/10 overflow-hidden h-[500px] flex flex-col">
+            <div className={`bg-white shadow-2xl border border-[var(--gold)]/10 overflow-hidden flex flex-col ${
+              isFullscreen
+                ? 'h-full rounded-none'
+                : 'h-[500px] rounded-lg'
+            }`}>
               {/* Header */}
               <div className="bg-gradient-to-r from-[var(--navy)] to-[var(--navy-light)] p-4 flex items-center justify-between">
                 <div className="flex items-center">
@@ -215,12 +260,24 @@ export default function AIChatAssistant() {
                     <p className="text-white/70 text-xs segoe-light">Wachira & Mumbi Advocates</p>
                   </div>
                 </div>
-                <button 
-                  onClick={handleClose}
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-                >
-                  <i className="fas fa-times text-white text-sm"></i>
-                </button>
+                <div className="flex items-center space-x-2">
+                  {/* Fullscreen toggle button */}
+                  <button 
+                    onClick={() => setIsFullscreen(!isFullscreen)}
+                    className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                    title={isFullscreen ? "Exit fullscreen" : "Enter fullscreen"}
+                  >
+                    <i className={`fas ${isFullscreen ? 'fa-compress-alt' : 'fa-expand-alt'} text-white text-sm`}></i>
+                  </button>
+                  
+                  {/* Close button */}
+                  <button 
+                    onClick={handleClose}
+                    className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                  >
+                    <i className="fas fa-times text-white text-sm"></i>
+                  </button>
+                </div>
               </div>
               
               {/* Chat messages */}
@@ -312,10 +369,11 @@ export default function AIChatAssistant() {
                   className="flex items-center"
                 >
                   <input
+                    ref={inputRef}
                     type="text"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="Type your question here..."
+                    placeholder="Type your question here... (or press '/' to focus)"
                     disabled={isTyping}
                     className="flex-1 border border-gray-300 rounded-l-md px-4 py-2 text-sm segoe-regular focus:outline-none focus:border-[var(--gold)]/40 focus:ring-1 focus:ring-[var(--gold)]/20 disabled:bg-gray-50 disabled:text-gray-400"
                   />
@@ -330,6 +388,13 @@ export default function AIChatAssistant() {
                 {isTyping && (
                   <p className="text-xs text-gray-500 mt-1 text-center italic">
                     Assistant is typing...
+                  </p>
+                )}
+                
+                {/* Keyboard shortcut hint (only in fullscreen mode) */}
+                {isFullscreen && !isTyping && (
+                  <p className="text-xs text-gray-400 mt-1 text-center">
+                    Press <kbd className="px-1 py-0.5 bg-gray-100 border border-gray-300 rounded text-gray-500 font-mono text-[10px]">ESC</kbd> to exit fullscreen or <kbd className="px-1 py-0.5 bg-gray-100 border border-gray-300 rounded text-gray-500 font-mono text-[10px]">/</kbd> to focus input
                   </p>
                 )}
               </div>
