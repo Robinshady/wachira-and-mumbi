@@ -6,6 +6,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import CustomCursor from "@/components/ui/custom-cursor";
 import ScrollProgress from "@/components/ui/scroll-progress";
+import AIChatAssistant from "@/components/ui/ai-chat-assistant";
 
 function Router() {
   return (
@@ -22,6 +23,9 @@ function App() {
       {/* UI Enhancements */}
       <CustomCursor />
       <ScrollProgress />
+      
+      {/* AI Chat Assistant */}
+      <AIChatAssistant />
       
       {/* Main Content */}
       <Router />

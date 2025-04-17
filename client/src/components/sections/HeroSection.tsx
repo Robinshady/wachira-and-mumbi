@@ -191,12 +191,21 @@ export default function HeroSection() {
           </AnimatePresence>
           
           <motion.h2 
-            className="segoe-light text-4xl md:text-5xl lg:text-6xl text-white tracking-tight mt-2"
+            className="segoe-semibold text-3xl md:text-4xl lg:text-5xl text-white tracking-tight mt-4 relative z-10"
             initial={{ opacity: 0, letterSpacing: "0.1em" }}
             animate={{ opacity: 1, letterSpacing: "-0.02em" }}
             transition={{ delay: 0.5, duration: 1.2 }}
           >
-            IN LEGAL PRACTICE
+            <span className="relative z-10 inline-block px-6 py-2">
+              <span className="relative z-10">IN LEGAL PRACTICE</span>
+              {/* Background highlight for better visibility */}
+              <span className="absolute inset-0 bg-[var(--navy)]/80 backdrop-blur-sm -z-10 rounded-lg"></span>
+              <span className="absolute inset-0 border border-[var(--gold)]/10 rounded-lg -z-10"></span>
+              {/* Top accent line */}
+              <span className="absolute top-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/30 to-transparent -z-10"></span>
+              {/* Bottom accent line */}
+              <span className="absolute bottom-0 left-4 right-4 h-px bg-gradient-to-r from-transparent via-[var(--gold)]/30 to-transparent -z-10"></span>
+            </span>
           </motion.h2>
         </div>
         
