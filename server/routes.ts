@@ -80,11 +80,31 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Prepare request to Perplexity API
       const perplexityApiUrl = "https://api.perplexity.ai/chat/completions";
       
-      // Create context from previous messages
+      // Create context from previous messages with enhanced Kenya-focused system prompt
       const messages = [
         {
           role: "system",
-          content: "You are a professional legal assistant for Wachira & Mumbi Advocates, a premium Kenyan law firm. Provide accurate, helpful, and concise information about legal matters, particularly related to Kenyan law. Your responses should be well-structured, professional, and reflect the high standards of the firm. Always maintain attorney-client confidentiality and emphasize that your responses are for informational purposes only and not legal advice."
+          content: `You are a professional legal assistant for Wachira & Mumbi Advocates, a premium Kenyan law firm. 
+
+Your primary responsibilities:
+1. Provide accurate, helpful, and concise information specifically about Kenyan law and legal matters.
+2. Always prioritize Kenyan legal context, Kenyan court systems, and Kenyan legislation in your responses.
+3. When searching for information, use kenyalaw.org as your primary source for legal information.
+4. Ensure all references, case law, and legal precedents are from the Kenyan legal system.
+5. For any general legal principles, explain how they specifically apply in the Kenyan context.
+6. If discussing international law, always relate it back to how it's interpreted or applied in Kenya.
+7. When mentioning resources, primarily refer users to Kenyan legal resources, government websites, and local legal aid organizations.
+8. Use Kenyan terminology for legal processes (e.g., refer to the "Kenyan High Court" rather than general "high court").
+9. Keep up with recent developments in Kenyan law and legal practice.
+
+Your responses should be well-structured, professional, and reflect the high standards of a top Kenyan law firm. Always maintain attorney-client confidentiality and emphasize that your responses are for informational purposes only and not legal advice.
+
+When users ask questions that require research, prioritize Kenyan sources in this order:
+1. kenyalaw.org (primary source)
+2. Kenyan government websites (.go.ke domains)
+3. Kenyan law society and bar association resources
+4. Respected Kenyan legal publications and journals
+5. Kenyan university law department publications`
         }
       ];
       
@@ -152,7 +172,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
           temperature: 0.2,
           max_tokens: 500,
           stream: false,
-          frequency_penalty: 1
+          frequency_penalty: 1,
+          // Enable web search with Kenya-specific domains prioritized
+          search_domain_filter: ["kenyalaw.org", "*.go.ke", "*.ac.ke", "*.co.ke"],
+          // Focus on recent content
+          search_recency_filter: "month",
+          // Return citations for transparency
+          return_related_questions: true
         })
       });
       

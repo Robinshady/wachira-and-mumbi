@@ -13,12 +13,13 @@ interface Message {
 }
 
 // Default greeting and suggestions
-const GREETING_MESSAGE = "Hello, I'm your legal assistant from Wachira & Mumbi Advocates. How can I help you today?";
+const GREETING_MESSAGE = "Hello, I'm your legal assistant from Wachira & Mumbi Advocates. How can I help you with Kenyan legal matters today?";
 const SUGGESTIONS = [
-  "What services do you offer?",
-  "How can I schedule a consultation?",
-  "Tell me about your expertise in corporate law",
-  "What are your office hours?",
+  "What are the key features of Kenyan corporate law?",
+  "How do I register a business in Kenya?",
+  "What is the process for appealing a case in the Kenyan court system?",
+  "What rights do tenants have under Kenyan law?",
+  "How does Kenyan family law handle divorce proceedings?",
 ];
 
 export default function AIChatAssistant() {
