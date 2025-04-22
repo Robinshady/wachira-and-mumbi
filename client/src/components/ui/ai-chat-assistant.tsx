@@ -26,20 +26,12 @@ export default function AIChatAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
-  const [showInitialPopup, setShowInitialPopup] = useState(true);
   const [isTyping, setIsTyping] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const messageEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   
-  useEffect(() => {
-    // Show the chatbot after a small delay when the user lands on the page
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 1500);
-    
-    return () => clearTimeout(timer);
-  }, []);
+  // No need for any automatic opening timer - chat button starts closed by default
   
   useEffect(() => {
     // Add the initial greeting message when chat opens
@@ -106,7 +98,6 @@ export default function AIChatAssistant() {
     
     setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
-    setShowInitialPopup(false);
     
     // Add typing indicator
     setIsTyping(true);
@@ -171,50 +162,6 @@ export default function AIChatAssistant() {
   
   return (
     <>
-      {/* Initial popup that appears when user lands on the page */}
-      <AnimatePresence>
-        {showInitialPopup && isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ duration: 0.3 }}
-            className="fixed right-6 bottom-24 z-50 max-w-xs"
-          >
-            <div className="bg-white rounded-lg shadow-2xl border border-[var(--gold)]/10 overflow-hidden">
-              <div className="bg-gradient-to-r from-[var(--navy)] to-[var(--navy-light)] p-4">
-                <div className="flex items-center">
-                  <div className="w-8 h-8 bg-[var(--gold)]/10 rounded-full flex items-center justify-center mr-3">
-                    <i className="fas fa-robot text-[var(--gold)]"></i>
-                  </div>
-                  <h3 className="text-white text-sm segoe-semibold">Legal Assistant</h3>
-                </div>
-              </div>
-              
-              <div className="p-4">
-                <p className="text-sm segoe-regular text-gray-700 mb-3">
-                  Hello! I'm your virtual legal assistant. Would you like help with anything?
-                </p>
-                
-                <div className="flex space-x-2">
-                  <button 
-                    onClick={() => setIsOpen(true)} 
-                    className="flex-1 bg-[var(--navy)] text-white text-sm segoe-regular py-2 rounded hover:bg-[var(--navy-light)] transition-colors"
-                  >
-                    Chat Now
-                  </button>
-                  <button 
-                    onClick={() => setShowInitialPopup(false)}
-                    className="flex-1 border border-gray-300 text-gray-600 text-sm segoe-regular py-2 rounded hover:bg-gray-50 transition-colors"
-                  >
-                    Maybe Later
-                  </button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
       
       {/* Chat button that toggles the chat interface (hidden when in fullscreen) - Moved to left side */}
       {!isFullscreen && (
