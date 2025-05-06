@@ -95,11 +95,17 @@ export default function TeamSection() {
               variants={itemVariants}
             >
               <div className="overflow-hidden">
-                <div className="w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] bg-white flex items-center justify-center">
+                <div className="w-full bg-white flex items-center justify-center" style={{ height: "550px" }}>
                   <img 
                     src={attorney.image} 
                     alt={attorney.name} 
-                    className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      maxWidth: "100%",
+                      maxHeight: "100%"
+                    }}
                   />
                 </div>
               </div>
