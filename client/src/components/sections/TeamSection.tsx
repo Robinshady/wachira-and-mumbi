@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
+// Import images
+import jamesWachiraImg from "../../assets/james-wachira.jpg";
+import catherineMumbiImg from "../../assets/catherine-mumbi.jpg";
+import brianNtheiImg from "../../assets/brian-nthei.jpg";
+
 // Define the attorney interface
 interface Attorney {
   id: number;
@@ -9,7 +14,7 @@ interface Attorney {
   position: string;
   practice: string;
   bio: string;
-  image?: string; // Optional now
+  image: string;
   imagePlaceholder?: string; // Optional placeholder flag
 }
 
@@ -20,7 +25,7 @@ const attorneys: Attorney[] = [
     position: "Managing Partner",
     practice: "Corporate Law, Mergers & Acquisitions",
     bio: "With over 25 years of experience, James leads complex corporate transactions and has been recognized for excellence in Kenyan corporate law and cross-border transactions.",
-    imagePlaceholder: "true"
+    image: jamesWachiraImg
   },
   {
     id: 2,
@@ -28,15 +33,15 @@ const attorneys: Attorney[] = [
     position: "Senior Partner",
     practice: "Litigation, Commercial Disputes",
     bio: "A formidable litigator with an exceptional track record in high-stakes commercial disputes and a recognized expert in Kenyan constitutional law.",
-    imagePlaceholder: "true"
+    image: catherineMumbiImg
   },
   {
     id: 3,
-    name: "Daniel Kimathi",
+    name: "Brian Nthei",
     position: "Partner",
     practice: "Real Estate, Finance",
-    bio: "Specializing in complex real estate transactions and financing throughout Kenya, Daniel brings invaluable expertise from his previous role as legal advisor to major property developers.",
-    imagePlaceholder: "true"
+    bio: "Specializing in complex real estate transactions and financing throughout Kenya, Brian brings invaluable expertise from his previous role as legal advisor to major property developers.",
+    image: brianNtheiImg
   }
 ];
 
@@ -96,16 +101,12 @@ export default function TeamSection() {
               variants={itemVariants}
             >
               <div className="overflow-hidden">
-                {/* Always show placeholder since we're replacing all images */}
-                <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-4 md:p-6 transition-all duration-500 group-hover:bg-gradient-to-br">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-3 md:mb-4">
-                    <i className="fas fa-user-tie text-[var(--gold)] text-2xl md:text-3xl"></i>
-                  </div>
-                  <h5 className="text-base md:text-lg font-semibold segoe-semibold mb-1 md:mb-2">Coming Soon</h5>
-                  <p className="text-xs md:text-sm text-center text-white/70 max-w-xs">Professional headshot will be available shortly</p>
-                  <div className="mt-4 md:mt-6 animate-pulse">
-                    <i className="fas fa-camera text-[var(--gold)] text-lg md:text-xl"></i>
-                  </div>
+                <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 bg-white">
+                  <img 
+                    src={attorney.image} 
+                    alt={attorney.name} 
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
               </div>
               <div className="p-4 md:p-6 bg-white">
