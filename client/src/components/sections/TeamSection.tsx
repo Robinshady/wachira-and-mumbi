@@ -2,11 +2,6 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 
-// Import images
-import jamesWachiraImg from "../../assets/james-wachira.jpg";
-import catherineMumbiImg from "../../assets/catherine-mumbi.jpg";
-import brianNtheiImg from "../../assets/brian-nthei.jpg";
-
 // Define the attorney interface
 interface Attorney {
   id: number;
@@ -15,7 +10,6 @@ interface Attorney {
   practice: string;
   bio: string;
   image: string;
-  imagePlaceholder?: string; // Optional placeholder flag
 }
 
 const attorneys: Attorney[] = [
@@ -25,7 +19,7 @@ const attorneys: Attorney[] = [
     position: "Managing Partner",
     practice: "Corporate Law, Mergers & Acquisitions",
     bio: "With over 25 years of experience, James leads complex corporate transactions and has been recognized for excellence in Kenyan corporate law and cross-border transactions.",
-    image: jamesWachiraImg
+    image: "/images/james-wachira.jpg"
   },
   {
     id: 2,
@@ -33,7 +27,7 @@ const attorneys: Attorney[] = [
     position: "Senior Partner",
     practice: "Litigation, Commercial Disputes",
     bio: "A formidable litigator with an exceptional track record in high-stakes commercial disputes and a recognized expert in Kenyan constitutional law.",
-    image: catherineMumbiImg
+    image: "/images/catherine-mumbi.jpg"
   },
   {
     id: 3,
@@ -41,7 +35,7 @@ const attorneys: Attorney[] = [
     position: "Partner",
     practice: "Real Estate, Finance",
     bio: "Specializing in complex real estate transactions and financing throughout Kenya, Brian brings invaluable expertise from his previous role as legal advisor to major property developers.",
-    image: brianNtheiImg
+    image: "/images/brian-nthei.jpg"
   }
 ];
 
@@ -101,11 +95,11 @@ export default function TeamSection() {
               variants={itemVariants}
             >
               <div className="overflow-hidden">
-                <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 bg-white flex items-center justify-center">
+                <div className="w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] bg-white flex items-center justify-center">
                   <img 
                     src={attorney.image} 
                     alt={attorney.name} 
-                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                    className="w-full h-full object-contain transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
               </div>
