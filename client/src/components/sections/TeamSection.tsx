@@ -101,11 +101,11 @@ export default function TeamSection() {
               variants={itemVariants}
             >
               <div className="overflow-hidden">
-                <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 bg-white">
+                <div className="w-full h-64 sm:h-72 md:h-80 lg:h-96 bg-white flex items-center justify-center">
                   <img 
                     src={attorney.image} 
                     alt={attorney.name} 
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
                 </div>
               </div>
