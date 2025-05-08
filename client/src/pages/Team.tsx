@@ -453,53 +453,58 @@ export default function Team() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true, amount: 0.1 }}
-                  className="group bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl relative transition-all duration-300"
+                  whileHover={{ y: -10 }}
+                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl relative transition-all duration-300 border border-gray-100"
                 >
-                  <div className="absolute top-0 right-0 w-20 h-20 overflow-hidden z-10">
-                    <div className="bg-[var(--gold)] text-white text-xs font-semibold py-1 text-center transform rotate-45 translate-y-7 translate-x-5 shadow-sm w-28">
-                      ID: {attorney.id.toString().padStart(2, '0')}
+                  <div className="absolute top-3 right-3 z-10">
+                    <div className="bg-[var(--gold)] text-white text-xs font-semibold py-1.5 px-3 rounded-full shadow-md">
+                      <span className="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                        {attorney.position}
+                      </span>
                     </div>
                   </div>
                   
-                  <div className="overflow-hidden h-[400px]">
-                    <div className="w-full h-full bg-[var(--navy-lighter)] relative">
+                  <div className="overflow-hidden h-[450px]">
+                    <div className="w-full h-full relative">
+                      <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <img
                         src={attorney.image}
                         alt={attorney.name}
-                        className="absolute inset-0 w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                        style={{
-                          maxHeight: "100%",
-                          maxWidth: "100%"
-                        }}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                     </div>
                   </div>
                   
-                  <div className="p-6 border-t-2 border-[var(--gold)]">
-                    <h4 className="text-xl font-bold text-[var(--navy)] playfair">{attorney.name}</h4>
-                    <div className="h-px w-12 bg-[var(--gold)] my-3"></div>
-                    <p className="text-[var(--gold)] text-sm font-medium mb-2">{attorney.position}</p>
-                    <p className="text-[var(--charcoal)] text-sm mb-4">{attorney.practice}</p>
+                  <div className="p-8 border-t-2 border-[var(--gold)] relative bg-white">
+                    <div className="absolute -top-5 left-8 bg-[var(--navy)] text-white px-4 py-1 rounded-md shadow-md text-xs font-semibold">
+                      {attorney.practice}
+                    </div>
                     
-                    <div className="mt-4 pt-4 border-t border-gray-100">
+                    <h4 className="text-2xl font-bold text-[var(--navy)] playfair mt-3">{attorney.name}</h4>
+                    <div className="h-px w-16 bg-[var(--gold)] my-4"></div>
+                    
+                    <div className="mt-4 space-y-5">
                       <details className="group cursor-pointer">
-                        <summary className="flex justify-between items-center text-sm font-medium text-[var(--navy)] hover:text-[var(--gold)] transition-colors">
+                        <summary className="flex justify-between items-center text-sm font-medium text-[var(--navy)] hover:text-[var(--gold)] transition-colors py-2 border-b border-gray-100">
                           <span className="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             Attorney Profile
                           </span>
-                          <span className="transform group-open:rotate-180 transition-transform duration-200">
+                          <span className="transform group-open:rotate-180 transition-transform duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                             </svg>
                           </span>
                         </summary>
-                        <div className="pt-4 text-sm space-y-3">
+                        <div className="pt-4 text-sm space-y-4 px-2">
                           {attorney.education && (
-                            <div>
-                              <h5 className="font-semibold text-[var(--navy)] flex items-center">
+                            <div className="bg-[var(--navy-lighter)] p-4 rounded-lg">
+                              <h5 className="font-semibold text-[var(--navy)] flex items-center mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -507,23 +512,30 @@ export default function Team() {
                                 </svg>
                                 Education
                               </h5>
-                              <ul className="mt-1 list-disc pl-5">
+                              <ul className="mt-1 space-y-2">
                                 {attorney.education.map((edu, i) => (
-                                  <li key={i} className="text-[var(--charcoal)]">{edu}</li>
+                                  <li key={i} className="flex items-start">
+                                    <span className="text-[var(--gold)] mr-2 text-lg">•</span>
+                                    <span className="text-[var(--charcoal)]">{edu}</span>
+                                  </li>
                                 ))}
                               </ul>
                             </div>
                           )}
                           
                           {attorney.languages && (
-                            <div>
-                              <h5 className="font-semibold text-[var(--navy)] flex items-center">
+                            <div className="bg-[var(--navy-lighter)] p-4 rounded-lg">
+                              <h5 className="font-semibold text-[var(--navy)] flex items-center mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                                 </svg>
                                 Languages
                               </h5>
-                              <p className="text-[var(--charcoal)]">{attorney.languages.join(', ')}</p>
+                              <div className="flex flex-wrap gap-2">
+                                {attorney.languages.map((lang, i) => (
+                                  <span key={i} className="inline-block bg-white px-3 py-1 rounded-full text-[var(--navy)] text-xs">{lang}</span>
+                                ))}
+                              </div>
                             </div>
                           )}
                         </div>
