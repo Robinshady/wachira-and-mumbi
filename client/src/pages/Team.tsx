@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { FaArrowLeft } from "react-icons/fa";
+import ScrollArrow from "../components/ui/scroll-arrow";
 
 // Define attorney interface
 interface Attorney {
@@ -338,6 +339,8 @@ export default function Team() {
             <FaArrowLeft className="mr-2" />
             <span>Back to Home</span>
           </Link>
+          
+          <ScrollArrow color="white" targetId="practice-areas" />
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
