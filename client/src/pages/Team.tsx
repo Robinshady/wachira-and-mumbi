@@ -368,7 +368,7 @@ export default function Team() {
             </div>
           </motion.div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent"></div>
+
       </section>
 
       {/* Main Content */}
@@ -382,9 +382,11 @@ export default function Team() {
           className="container mx-auto px-4 md:px-6"
         >
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block px-4 py-1 bg-[var(--navy)] text-[var(--gold)] rounded-full text-xs font-semibold uppercase tracking-wider mb-4">Expertise & Knowledge</div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy)] playfair mb-6">Our Practice Areas</h2>
-            <div className="h-1 w-24 bg-[var(--gold)] mx-auto mb-8"></div>
+            <div className="inline-block px-5 py-2 bg-[var(--navy)] text-[#d4af37] rounded-full text-xs font-semibold uppercase tracking-wider mb-5 border border-[#d4af37] shadow-md">
+              <span className="font-bold">Expertise & Knowledge</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy)] playfair mb-8">Our Practice Areas</h2>
+            <div className="h-1.5 w-32 bg-[#d4af37] mx-auto mb-10 rounded-full shadow-sm"></div>
             <p className="text-[var(--charcoal)] text-lg md:text-xl leading-relaxed">
               We offer comprehensive legal services across key practice areas, tailored to meet the diverse needs of individuals, businesses, and organizations throughout Kenya and East Africa.
             </p>
@@ -438,14 +440,14 @@ export default function Team() {
             </div>
             
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy)] playfair mb-6">Meet Our Distinguished Team</h2>
-              <div className="h-1 w-24 bg-[var(--gold)] mx-auto mb-8"></div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy)] playfair mb-8">Meet Our Distinguished Team</h2>
+              <div className="h-1.5 w-32 bg-[#d4af37] mx-auto mb-10 rounded-full shadow-sm"></div>
               <p className="text-[var(--charcoal)] text-lg md:text-xl leading-relaxed">
                 Our diverse team combines academic excellence with practical expertise to provide sophisticated legal counsel for your most complex matters throughout Kenya and East Africa.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
               {attorneys.map((attorney, index) => (
                 <motion.div
                   key={attorney.id}
@@ -457,34 +459,38 @@ export default function Team() {
                   className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl relative transition-all duration-300 border border-gray-100"
                 >
                   <div className="absolute top-3 right-3 z-10">
-                    <div className="bg-[var(--gold)] text-white text-xs font-semibold py-1.5 px-3 rounded-full shadow-md">
+                    <div className="bg-[#d4af37] text-white text-xs font-semibold py-2 px-4 rounded-full shadow-lg">
                       <span className="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                         </svg>
-                        {attorney.position}
+                        <span className="font-bold tracking-wider">{attorney.position}</span>
                       </span>
                     </div>
                   </div>
                   
-                  <div className="overflow-hidden h-[450px]">
-                    <div className="w-full h-full relative">
+                  <div className="overflow-hidden h-[500px]">
+                    <div className="w-full h-full relative bg-[#f2f2f2]">
                       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       <img
                         src={attorney.image}
                         alt={attorney.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        style={{
+                          imageRendering: "auto",
+                          objectPosition: "center top"
+                        }}
                       />
                     </div>
                   </div>
                   
                   <div className="p-8 border-t-2 border-[var(--gold)] relative bg-white">
-                    <div className="absolute -top-5 left-8 bg-[var(--navy)] text-white px-4 py-1 rounded-md shadow-md text-xs font-semibold">
+                    <div className="absolute -top-5 left-8 bg-[var(--navy)] text-white px-6 py-2 rounded-md shadow-lg text-sm font-bold">
                       {attorney.practice}
                     </div>
                     
                     <h4 className="text-2xl font-bold text-[var(--navy)] playfair mt-3">{attorney.name}</h4>
-                    <div className="h-px w-16 bg-[var(--gold)] my-4"></div>
+                    <div className="h-0.5 w-20 bg-[#d4af37] my-4 rounded-full shadow-sm"></div>
                     
                     <div className="mt-4 space-y-5">
                       <details className="group cursor-pointer">
@@ -562,8 +568,8 @@ export default function Team() {
             viewport={{ once: true, amount: 0.3 }}
             className="bg-[rgba(255,255,255,0.05)] backdrop-blur-sm p-8 md:p-12 rounded-lg border border-[rgba(255,255,255,0.1)] max-w-4xl mx-auto"
           >
-            <div className="inline-block bg-[var(--gold)] text-white px-4 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
-              Let's Work Together
+            <div className="inline-block px-6 py-2 bg-[#d4af37] text-white rounded-full text-xs font-semibold uppercase tracking-wider mb-6 shadow-lg">
+              <span className="font-bold tracking-wider">Let's Work Together</span>
             </div>
             
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white playfair mb-6">
@@ -578,14 +584,14 @@ export default function Team() {
             <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
               <button 
                 onClick={() => window.location.href = "/#contact"}
-                className="inline-block bg-[var(--gold)] text-white hover:bg-white hover:text-[var(--navy)] px-8 py-4 rounded text-sm font-semibold uppercase tracking-wider transition-colors duration-300 shadow-md"
+                className="inline-block bg-[#d4af37] text-white hover:bg-white hover:text-[var(--navy)] px-10 py-4 rounded text-sm font-bold uppercase tracking-wider transition-colors duration-300 shadow-lg"
               >
                 Contact Us Today
               </button>
               
               <button 
                 onClick={() => window.location.href = "/"}
-                className="inline-block bg-transparent text-white border border-white px-8 py-4 rounded text-sm font-semibold uppercase tracking-wider transition-colors duration-300 hover:bg-white hover:text-[var(--navy)]"
+                className="inline-block bg-transparent text-white border-2 border-white px-10 py-4 rounded text-sm font-bold uppercase tracking-wider transition-colors duration-300 hover:bg-white hover:text-[var(--navy)] shadow-lg"
               >
                 Return to Home
               </button>
