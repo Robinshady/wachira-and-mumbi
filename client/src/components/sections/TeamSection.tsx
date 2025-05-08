@@ -138,10 +138,10 @@ export default function TeamSection() {
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           <button 
-            onClick={() => scrollToSection("contact")}
+            onClick={() => window.location.href = "/team"}
             className="inline-block border border-[var(--navy)] text-[var(--navy)] hover:bg-[var(--navy)] hover:text-white px-6 py-3 sm:px-8 sm:py-4 rounded text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all duration-300"
           >
-            View All Attorneys
+            VIEW ALL ATTORNEYS AND THE TEAM
           </button>
         </motion.div>
       </div>
