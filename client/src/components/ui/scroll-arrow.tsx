@@ -56,24 +56,24 @@ export default function ScrollArrow({ color = "white", targetId }: ScrollArrowPr
       onClick={handleClick}
     >
       <div className="flex flex-col items-center">
-        <span className="text-sm font-medium mb-2" style={{ color }}>
+        <span className="text-sm font-bold mb-2 bg-black bg-opacity-30 px-4 py-1 rounded-full shadow-md backdrop-blur-sm" style={{ color }}>
           Scroll Down
         </span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke={color}
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="mb-1"
-        >
-          <path d="M12 5v14"></path>
-          <path d="m19 12-7 7-7-7"></path>
-        </svg>
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#d4af37] shadow-lg">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="m6 9 6 6 6-6"></path>
+          </svg>
+        </div>
       </div>
     </motion.div>
   );

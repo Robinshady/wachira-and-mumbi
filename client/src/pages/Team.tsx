@@ -378,6 +378,7 @@ export default function Team() {
       <div className="bg-[var(--navy-lighter)] py-24">
         {/* Practice Areas Section */}
         <motion.section 
+          id="practice-areas"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
@@ -475,15 +476,20 @@ export default function Team() {
                   <div className="overflow-hidden h-[500px]">
                     <div className="w-full h-full relative bg-[#f2f2f2]">
                       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(0,0,0,0.7)] to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <img
-                        src={attorney.image}
-                        alt={attorney.name}
-                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                        style={{
-                          imageRendering: "auto",
-                          objectPosition: "center top"
-                        }}
-                      />
+                      <div className="w-full h-full flex items-center justify-center">
+                        <img
+                          src={attorney.image}
+                          alt={attorney.name}
+                          className="group-hover:scale-105 transition-transform duration-700"
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                            maxWidth: "100%",
+                            maxHeight: "100%"
+                          }}
+                        />
+                      </div>
                     </div>
                   </div>
                   
