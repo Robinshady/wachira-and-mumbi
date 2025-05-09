@@ -235,7 +235,7 @@ export default function Team() {
               <span className="text-[var(--gold)] uppercase text-sm tracking-wider font-semibold">Excellence in Legal Practice</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold playfair mb-8 leading-tight">Our Distinguished Legal Team</h1>
-            <p className="text-xl md:text-2xl opacity-90 mb-10 max-w-3xl leading-relaxed">
+            <p className="text-xl md:text-2xl text-[var(--gold)] font-medium mb-10 max-w-3xl leading-relaxed">
               With a collective experience spanning decades across diverse practice areas, our team of legal professionals brings unparalleled expertise and commitment to every case.
             </p>
             <div className="flex flex-wrap items-center gap-5">
@@ -274,7 +274,7 @@ export default function Team() {
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy)] playfair mb-8">Our Practice Areas</h2>
             <div className="h-1.5 w-32 bg-[#d4af37] mx-auto mb-10 rounded-full shadow-sm"></div>
-            <p className="text-[var(--charcoal)] text-lg md:text-xl leading-relaxed">
+            <p className="text-[var(--gold)] text-lg md:text-xl font-medium leading-relaxed">
               We offer comprehensive legal services across key practice areas, tailored to meet the diverse needs of individuals, businesses, and organizations throughout Kenya and East Africa.
             </p>
           </div>
@@ -303,7 +303,7 @@ export default function Team() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-[var(--charcoal)] text-base">{item}</span>
+                        <span className="text-[var(--gold)] text-base font-medium">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -329,7 +329,7 @@ export default function Team() {
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy)] playfair mb-8">Meet Our Distinguished Team</h2>
               <div className="h-1.5 w-32 bg-[#d4af37] mx-auto mb-10 rounded-full shadow-sm"></div>
-              <p className="text-[var(--charcoal)] text-lg md:text-xl leading-relaxed">
+              <p className="text-[var(--gold)] text-lg md:text-xl font-medium leading-relaxed">
                 Our diverse team combines academic excellence with practical expertise to provide sophisticated legal counsel for your most complex matters throughout Kenya and East Africa.
               </p>
             </div>
