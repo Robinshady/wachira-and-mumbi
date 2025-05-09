@@ -18,7 +18,7 @@ interface Attorney {
 
 // Create expanded attorney data
 const attorneys: Attorney[] = [
-  // The original 3 attorneys
+  // Attorneys in requested order
   {
     id: 1,
     name: "James Wachira",
@@ -73,45 +73,26 @@ const attorneys: Attorney[] = [
     ],
     languages: ["English", "Kiswahili"]
   },
-  // New attorneys
   {
     id: 4,
-    name: "Vivian Njeri",
-    position: "Partner",
-    practice: "Employment Law, Labor Relations",
-    bio: "Vivian has built a reputation as one of Kenya's leading employment law specialists, representing both employers and employees in complex workplace litigation and negotiations.",
-    image: "/images/team/female-attorney-1.jpg",
+    name: "Elijah Kipchirchir",
+    position: "Associate",
+    practice: "Criminal Defense, White Collar Crime",
+    bio: "Elijah represents individuals and corporations in criminal investigations and prosecutions, with a focus on financial crimes, fraud, and regulatory enforcement actions.",
+    image: "/images/team/male-attorney-8.jpg",
     education: [
-      "LL.B, University of Nairobi",
-      "Postgraduate Diploma in Employment Law, Kenya School of Law"
+      "LL.B, Moi University",
+      "Diploma in Criminal Litigation, Kenya School of Law"
     ],
     accomplishments: [
-      "Successfully resolved over 200 employment disputes through mediation",
-      "Developed employment compliance programs for multinational corporations",
-      "Guest lecturer on Employment Law at Strathmore University"
+      "Successfully defended high-profile corruption cases",
+      "Former prosecutor with Director of Public Prosecutions",
+      "Guest lecturer on White Collar Crime at University of Nairobi"
     ],
-    languages: ["English", "Kiswahili"]
+    languages: ["English", "Kiswahili", "Kalenjin"]
   },
   {
     id: 5,
-    name: "George Maina",
-    position: "Partner",
-    practice: "Corporate Law, Banking & Finance",
-    bio: "George specializes in advising banks, financial institutions and corporations on complex transactions, restructurings, and regulatory compliance matters across East Africa.",
-    image: "/images/team/male-attorney-1.jpg",
-    education: [
-      "LL.B, University of Nairobi",
-      "MBA, Strathmore Business School"
-    ],
-    accomplishments: [
-      "Led legal team in first Kenyan green bond issuance",
-      "Advised on regulatory compliance for major international bank entry into Kenya",
-      "Published author on Banking Law reforms in East Africa"
-    ],
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 6,
     name: "David Kimani",
     position: "Senior Associate",
     practice: "Commercial Litigation, Arbitration",
@@ -129,25 +110,61 @@ const attorneys: Attorney[] = [
     languages: ["English", "Kiswahili"]
   },
   {
-    id: 7,
-    name: "Samuel Ochieng",
-    position: "Senior Associate",
-    practice: "Intellectual Property, Technology",
-    bio: "Samuel advises clients on all aspects of intellectual property protection, technology transactions, and data privacy compliance across Kenya and East Africa.",
-    image: "/images/team/male-attorney-3.jpg",
+    id: 6,
+    name: "Daniel Njoroge",
+    position: "Associate",
+    practice: "Environmental Law, Natural Resources",
+    bio: "Daniel focuses on environmental compliance, natural resource management, and climate change policy, assisting clients with regulatory approvals and sustainability strategies.",
+    image: "/images/team/male-attorney-5.jpg",
     education: [
       "LL.B, University of Nairobi",
-      "Master of Laws in IP, Queen Mary University of London"
+      "MSc in Environmental Management, University of London"
     ],
     accomplishments: [
-      "Registered Patent and Trademark Attorney",
-      "Developed IP protection strategies for leading Kenyan startups",
-      "Advisor to Kenya Copyright Board"
+      "Advised on environmental compliance for major infrastructure projects",
+      "Published research on climate change legislation in East Africa",
+      "Former legal consultant to National Environment Management Authority"
     ],
-    languages: ["English", "Kiswahili", "German"]
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 7,
+    name: "George Maina",
+    position: "Partner",
+    practice: "Corporate Law, Banking & Finance",
+    bio: "George specializes in advising banks, financial institutions and corporations on complex transactions, restructurings, and regulatory compliance matters across East Africa.",
+    image: "/images/team/male-attorney-1.jpg",
+    education: [
+      "LL.B, University of Nairobi",
+      "MBA, Strathmore Business School"
+    ],
+    accomplishments: [
+      "Led legal team in first Kenyan green bond issuance",
+      "Advised on regulatory compliance for major international bank entry into Kenya",
+      "Published author on Banking Law reforms in East Africa"
+    ],
+    languages: ["English", "Kiswahili"]
   },
   {
     id: 8,
+    name: "Vivian Njeri",
+    position: "Partner",
+    practice: "Employment Law, Labor Relations",
+    bio: "Vivian has built a reputation as one of Kenya's leading employment law specialists, representing both employers and employees in complex workplace litigation and negotiations.",
+    image: "/images/team/female-attorney-1.jpg",
+    education: [
+      "LL.B, University of Nairobi",
+      "Postgraduate Diploma in Employment Law, Kenya School of Law"
+    ],
+    accomplishments: [
+      "Successfully resolved over 200 employment disputes through mediation",
+      "Developed employment compliance programs for multinational corporations",
+      "Guest lecturer on Employment Law at Strathmore University"
+    ],
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 9,
     name: "Paul Otieno",
     position: "Partner",
     practice: "Tax Advisory, Corporate Restructuring",
@@ -166,43 +183,7 @@ const attorneys: Attorney[] = [
     languages: ["English", "Kiswahili", "Luo"]
   },
   {
-    id: 9,
-    name: "Grace Akinyi",
-    position: "Associate",
-    practice: "Family Law, Estate Planning",
-    bio: "Grace handles sensitive family law matters including divorce, child custody, and succession planning with a compassionate yet strategic approach that protects clients' interests.",
-    image: "/images/team/female-attorney-2.jpg",
-    education: [
-      "LL.B, Kenyatta University",
-      "Diploma in Family Mediation, Kenya School of Law"
-    ],
-    accomplishments: [
-      "Successfully mediated high-net-worth family disputes",
-      "Developed innovative child-focused custody arrangements",
-      "Volunteer at Family Law Clinic providing pro bono legal assistance"
-    ],
-    languages: ["English", "Kiswahili", "Luo"]
-  },
-  {
     id: 10,
-    name: "Daniel Njoroge",
-    position: "Associate",
-    practice: "Environmental Law, Natural Resources",
-    bio: "Daniel focuses on environmental compliance, natural resource management, and climate change policy, assisting clients with regulatory approvals and sustainability strategies.",
-    image: "/images/team/male-attorney-5.jpg",
-    education: [
-      "LL.B, University of Nairobi",
-      "MSc in Environmental Management, University of London"
-    ],
-    accomplishments: [
-      "Advised on environmental compliance for major infrastructure projects",
-      "Published research on climate change legislation in East Africa",
-      "Former legal consultant to National Environment Management Authority"
-    ],
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 11,
     name: "Richard Mwangi",
     position: "Associate",
     practice: "Energy & Infrastructure",
@@ -220,43 +201,25 @@ const attorneys: Attorney[] = [
     languages: ["English", "Kiswahili", "French"]
   },
   {
-    id: 12,
-    name: "Peter Kamau",
+    id: 11,
+    name: "Elizabeth Wanjiru",
     position: "Associate",
-    practice: "Competition Law, Regulatory Compliance",
-    bio: "Peter helps clients navigate competition regulations and investigations, with particular focus on merger control, abuse of dominance, and anti-competitive agreements.",
-    image: "/images/team/male-attorney-7.jpg",
+    practice: "Insurance & Risk Management",
+    bio: "Elizabeth advises insurers, reinsurers and corporate policyholders on complex coverage issues, claims management and regulatory compliance in the insurance sector.",
+    image: "/images/team/female-attorney-3.jpg",
     education: [
       "LL.B, University of Nairobi",
-      "Postgraduate Diploma in Competition Law, King's College London"
+      "Diploma in Insurance Law, Chartered Insurance Institute"
     ],
     accomplishments: [
-      "Successfully represented clients before Competition Authority of Kenya",
-      "Advised on merger clearances for major corporate transactions",
-      "Former legal researcher for Competition Authority"
+      "Handled complex insurance claims in manufacturing and healthcare sectors",
+      "Developed insurance compliance frameworks for multinational corporations",
+      "Member of Association of Insurance Practitioners of Kenya"
     ],
     languages: ["English", "Kiswahili"]
   },
   {
-    id: 13,
-    name: "Elijah Kipchirchir",
-    position: "Associate",
-    practice: "Criminal Defense, White Collar Crime",
-    bio: "Elijah represents individuals and corporations in criminal investigations and prosecutions, with a focus on financial crimes, fraud, and regulatory enforcement actions.",
-    image: "/images/team/male-attorney-8.jpg",
-    education: [
-      "LL.B, Moi University",
-      "Diploma in Criminal Litigation, Kenya School of Law"
-    ],
-    accomplishments: [
-      "Successfully defended high-profile corruption cases",
-      "Former prosecutor with Director of Public Prosecutions",
-      "Guest lecturer on White Collar Crime at University of Nairobi"
-    ],
-    languages: ["English", "Kiswahili", "Kalenjin"]
-  },
-  {
-    id: 14,
+    id: 12,
     name: "Moses Kimathi",
     position: "Senior Counsel",
     practice: "Constitutional Law, Human Rights",
@@ -274,23 +237,41 @@ const attorneys: Attorney[] = [
     languages: ["English", "Kiswahili"]
   },
   {
-    id: 15,
-    name: "Elizabeth Wanjiru",
+    id: 13,
+    name: "Peter Kamau",
     position: "Associate",
-    practice: "Insurance & Risk Management",
-    bio: "Elizabeth advises insurers, reinsurers and corporate policyholders on complex coverage issues, claims management and regulatory compliance in the insurance sector.",
-    image: "/images/team/female-attorney-3.jpg",
+    practice: "Competition Law, Regulatory Compliance",
+    bio: "Peter helps clients navigate competition regulations and investigations, with particular focus on merger control, abuse of dominance, and anti-competitive agreements.",
+    image: "/images/team/male-attorney-7.jpg",
     education: [
       "LL.B, University of Nairobi",
-      "Diploma in Insurance Law, Chartered Insurance Institute"
+      "Postgraduate Diploma in Competition Law, King's College London"
     ],
     accomplishments: [
-      "Handled complex insurance claims in manufacturing and healthcare sectors",
-      "Developed insurance compliance frameworks for multinational corporations",
-      "Member of Association of Insurance Practitioners of Kenya"
+      "Successfully represented clients before Competition Authority of Kenya",
+      "Advised on merger clearances for major corporate transactions",
+      "Former legal researcher for Competition Authority"
     ],
     languages: ["English", "Kiswahili"]
   },
+  {
+    id: 14,
+    name: "Grace Akinyi",
+    position: "Associate",
+    practice: "Family Law, Estate Planning",
+    bio: "Grace handles sensitive family law matters including divorce, child custody, and succession planning with a compassionate yet strategic approach that protects clients' interests.",
+    image: "/images/team/female-attorney-2.jpg",
+    education: [
+      "LL.B, Kenyatta University",
+      "Diploma in Family Mediation, Kenya School of Law"
+    ],
+    accomplishments: [
+      "Successfully mediated high-net-worth family disputes",
+      "Developed innovative child-focused custody arrangements",
+      "Volunteer at Family Law Clinic providing pro bono legal assistance"
+    ],
+    languages: ["English", "Kiswahili", "Luo"]
+  }
 ];
 
 // Practice areas with their expertise descriptions
