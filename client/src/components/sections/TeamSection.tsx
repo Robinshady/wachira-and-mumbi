@@ -15,26 +15,26 @@ interface Attorney {
 const attorneys: Attorney[] = [
   {
     id: 1,
-    name: "James Wachira",
-    position: "Managing Partner",
-    practice: "Corporate Law, Mergers & Acquisitions",
-    bio: "With over 25 years of experience, James leads complex corporate transactions and has been recognized for excellence in Kenyan corporate law and cross-border transactions.",
+    name: "DR. KIMANI WACHIRA",
+    position: "MANAGING PARTNER",
+    practice: "Corporate Law, Commercial Disputes",
+    bio: "Dr. Kimani Wachira leads the firm with expertise in corporate and commercial law. He holds LLB (HONS.) from MOI, PG DIP (LAW) from KSL, LL.M from UoN, and PhD in Humanities from UTCSI.",
     image: "/images/james-wachira.jpg"
   },
   {
     id: 2,
-    name: "Catherine Mumbi",
-    position: "Senior Partner",
-    practice: "Litigation, Commercial Disputes",
-    bio: "A formidable litigator with an exceptional track record in high-stakes commercial disputes and a recognized expert in Kenyan constitutional law.",
+    name: "MUMBI NTHIGA",
+    position: "PRINCIPAL PARTNER",
+    practice: "Litigation, Dispute Resolution",
+    bio: "A distinguished litigator with expertise in complex commercial and civil disputes. She holds LLB (HONS.) from CATHOLIC UNIVERSITY OF EAST AFRICA and PG DIP (LAW) from KSL.",
     image: "/images/catherine-mumbi.jpg"
   },
   {
     id: 3,
-    name: "Brian Nthei",
-    position: "Partner",
+    name: "BRIAN NTHEI",
+    position: "SENIOR ASSOCIATE ADVOCATE",
     practice: "Real Estate, Finance",
-    bio: "Specializing in complex real estate transactions and financing throughout Kenya, Brian brings invaluable expertise from his previous role as legal advisor to major property developers.",
+    bio: "Specializing in real estate and financial matters with dedication to every case. He holds LLB (HONS.) from CATHOLIC UNIVERSITY OF EAST AFRICA and PG DIP (LAW) from KSL.",
     image: "/images/brian-nthei.jpg"
   }
 ];

@@ -18,259 +18,161 @@ interface Attorney {
 
 // Create expanded attorney data
 const attorneys: Attorney[] = [
-  // Attorneys in requested order
+  // Attorneys in correct order with accurate information
   {
     id: 1,
-    name: "James Wachira",
-    position: "Managing Partner",
-    practice: "Corporate Law, Mergers & Acquisitions",
-    bio: "With over 25 years of experience, James leads complex corporate transactions and has been recognized for excellence in Kenyan corporate law and cross-border transactions.",
+    name: "DR. KIMANI WACHIRA",
+    position: "MANAGING PARTNER",
+    practice: "Corporate Law, Commercial Disputes",
+    bio: "Dr. Kimani Wachira leads the firm with extensive experience in corporate and commercial law, bringing expertise and strategic guidance to complex legal matters.",
     image: "/images/james-wachira.jpg",
     education: [
-      "LL.B, University of Nairobi",
-      "Masters in Commercial Law, London School of Economics"
+      "LLB (HONS.) MOI",
+      "PG DIP (LAW) KSL",
+      "LL.M (UoN)",
+      "PhD- Humanities (UTCSI)"
     ],
-    accomplishments: [
-      "Led legal team in Kenya's largest corporate acquisition (2018)",
-      "Named Top 50 Lawyers in Africa by African Legal Review (2020)",
-      "Author, 'Corporate Governance in East African Markets'"
-    ],
-    languages: ["English", "Kiswahili", "French"]
+    languages: ["English", "Kiswahili"]
   },
   {
     id: 2,
-    name: "Catherine Mumbi",
-    position: "Senior Partner",
-    practice: "Litigation, Commercial Disputes",
-    bio: "A formidable litigator with an exceptional track record in high-stakes commercial disputes and a recognized expert in Kenyan constitutional law.",
+    name: "MUMBI NTHIGA",
+    position: "PRINCIPAL PARTNER",
+    practice: "Litigation, Dispute Resolution",
+    bio: "A distinguished litigator with exceptional expertise in complex commercial and civil disputes, providing strategic counsel and representation to clients.",
     image: "/images/catherine-mumbi.jpg",
     education: [
-      "LL.B (Hons), University of Nairobi",
-      "Master of Laws, Harvard Law School"
-    ],
-    accomplishments: [
-      "Successfully represented clients in Kenya's Supreme Court",
-      "Chairperson, Kenyan Women in Commercial Law Association",
-      "Former Judicial Service Commission Member"
+      "LLB (HONS.) CATHOLIC UNIVERSITY OF EAST AFRICA",
+      "PG DIP (LAW) KSL"
     ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 3,
-    name: "Brian Nthei",
-    position: "Partner",
+    name: "BRIAN NTHEI",
+    position: "SENIOR ASSOCIATE ADVOCATE",
     practice: "Real Estate, Finance",
-    bio: "Specializing in complex real estate transactions and financing throughout Kenya, Brian brings invaluable expertise from his previous role as legal advisor to major property developers.",
+    bio: "Specializing in real estate transactions and financial matters, Brian brings valuable expertise and dedication to every client case.",
     image: "/images/brian-nthei.jpg",
     education: [
-      "LL.B, Strathmore University",
-      "Diploma in Property Law, University of Cape Town"
-    ],
-    accomplishments: [
-      "Advised on multi-billion shilling real estate developments in Nairobi",
-      "Member, Kenya Real Estate Lawyers Association",
-      "Consultant to National Land Commission"
+      "LLB (HONS.) CATHOLIC UNIVERSITY OF EAST AFRICA",
+      "PG DIP (LAW) KSL"
     ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 4,
-    name: "Elijah Kipchirchir",
-    position: "Associate",
-    practice: "Criminal Defense, White Collar Crime",
-    bio: "Elijah represents individuals and corporations in criminal investigations and prosecutions, with a focus on financial crimes, fraud, and regulatory enforcement actions.",
+    name: "NDUNG'U KAHURA",
+    position: "ASSOCIATE ADVOCATE",
+    practice: "Commercial Litigation, Corporate Law",
+    bio: "Ndung'u handles complex legal matters with precision and dedication, focusing on achieving the best possible outcomes for clients.",
     image: "/images/team/male-attorney-8.jpg",
     education: [
-      "LL.B, Moi University",
-      "Diploma in Criminal Litigation, Kenya School of Law"
+      "LLB (HONS.) CATHOLIC UNIVERSITY OF EAST AFRICA",
+      "PG DIP (LAW) KSL"
     ],
-    accomplishments: [
-      "Successfully defended high-profile corruption cases",
-      "Former prosecutor with Director of Public Prosecutions",
-      "Guest lecturer on White Collar Crime at University of Nairobi"
-    ],
-    languages: ["English", "Kiswahili", "Kalenjin"]
+    languages: ["English", "Kiswahili"]
   },
   {
     id: 5,
-    name: "David Kimani",
-    position: "Senior Associate",
-    practice: "Commercial Litigation, Arbitration",
-    bio: "David handles complex commercial disputes both in court and through alternative dispute resolution mechanisms, with particular expertise in construction and infrastructure disputes.",
+    name: "ERIC SIMIYU",
+    position: "ASSOCIATE ADVOCATE",
+    practice: "Civil Litigation, Administrative Law",
+    bio: "Eric's meticulous approach to legal research and strategy helps clients navigate complex legal challenges effectively.",
     image: "/images/team/male-attorney-2.jpg",
     education: [
-      "LL.B, Moi University",
-      "Diploma in Arbitration, Chartered Institute of Arbitrators"
-    ],
-    accomplishments: [
-      "Successfully represented clients in high-value construction arbitrations",
-      "Member of the Chartered Institute of Arbitrators",
-      "Certified Mediator, Mediation Training Institute"
+      "LLB (HONS.) UNIVERSITY OF NAIROBI",
+      "PG DIP (LAW) KSL"
     ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 6,
-    name: "Daniel Njoroge",
-    position: "Associate",
-    practice: "Environmental Law, Natural Resources",
-    bio: "Daniel focuses on environmental compliance, natural resource management, and climate change policy, assisting clients with regulatory approvals and sustainability strategies.",
+    name: "MIKE OYUGI",
+    position: "LAWYER",
+    practice: "Legal Research, Contract Law",
+    bio: "Mike provides thorough legal analysis and strategic guidance on various legal matters, ensuring clients receive comprehensive legal support.",
     image: "/images/team/male-attorney-5.jpg",
     education: [
-      "LL.B, University of Nairobi",
-      "MSc in Environmental Management, University of London"
-    ],
-    accomplishments: [
-      "Advised on environmental compliance for major infrastructure projects",
-      "Published research on climate change legislation in East Africa",
-      "Former legal consultant to National Environment Management Authority"
+      "LLB (HONS.) UNIVERSITY OF NAIROBI"
     ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 7,
-    name: "George Maina",
-    position: "Partner",
-    practice: "Corporate Law, Banking & Finance",
-    bio: "George specializes in advising banks, financial institutions and corporations on complex transactions, restructurings, and regulatory compliance matters across East Africa.",
+    name: "SALMON ACHOLA",
+    position: "LITIGATION & CONVEYANCING CLERK",
+    practice: "Litigation Support, Conveyancing",
+    bio: "Salmon provides essential support for litigation cases and conveyancing matters, ensuring smooth procedural processes for clients.",
     image: "/images/team/male-attorney-1.jpg",
-    education: [
-      "LL.B, University of Nairobi",
-      "MBA, Strathmore Business School"
-    ],
-    accomplishments: [
-      "Led legal team in first Kenyan green bond issuance",
-      "Advised on regulatory compliance for major international bank entry into Kenya",
-      "Published author on Banking Law reforms in East Africa"
-    ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 8,
-    name: "Vivian Njeri",
-    position: "Partner",
-    practice: "Employment Law, Labor Relations",
-    bio: "Vivian has built a reputation as one of Kenya's leading employment law specialists, representing both employers and employees in complex workplace litigation and negotiations.",
+    name: "STELLAMARIS NZOMO",
+    position: "OFFICE ADMINISTRATOR",
+    practice: "Administrative Management, Client Relations",
+    bio: "Stellamaris ensures the efficient operation of the firm, coordinating office functions and serving as a key point of contact for clients.",
     image: "/images/team/female-attorney-1.jpg",
-    education: [
-      "LL.B, University of Nairobi",
-      "Postgraduate Diploma in Employment Law, Kenya School of Law"
-    ],
-    accomplishments: [
-      "Successfully resolved over 200 employment disputes through mediation",
-      "Developed employment compliance programs for multinational corporations",
-      "Guest lecturer on Employment Law at Strathmore University"
-    ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 9,
-    name: "Paul Otieno",
-    position: "Partner",
-    practice: "Tax Advisory, Corporate Restructuring",
-    bio: "Paul provides strategic tax planning advice to businesses operating across multiple jurisdictions, helping clients navigate complex tax laws while ensuring full compliance.",
+    name: "JAMES MBUGUA",
+    position: "ACCOUNTANT",
+    practice: "Financial Management, Billing",
+    bio: "James manages the firm's financial operations, ensuring accurate accounting practices and financial reporting.",
     image: "/images/team/male-attorney-4.jpg",
-    education: [
-      "LL.B, University of Nairobi",
-      "Master of Tax Law, University of Pretoria",
-      "Certified Public Accountant (CPA-K)"
-    ],
-    accomplishments: [
-      "Former Senior Tax Consultant at Big Four accounting firm",
-      "Advised on tax structuring for major cross-border acquisitions",
-      "Regular contributor to Tax Journal of East Africa"
-    ],
-    languages: ["English", "Kiswahili", "Luo"]
+    languages: ["English", "Kiswahili"]
   },
   {
     id: 10,
-    name: "Richard Mwangi",
-    position: "Associate",
-    practice: "Energy & Infrastructure",
-    bio: "Richard specializes in project development and financing in the energy sector, with extensive experience in renewable energy projects throughout Kenya and East Africa.",
+    name: "KENNEDY NGIGE",
+    position: "ACCOUNTANT",
+    practice: "Financial Analysis, Compliance",
+    bio: "Kennedy provides essential financial expertise, maintaining the firm's compliance with financial regulations and reporting requirements.",
     image: "/images/team/male-attorney-6.jpg",
-    education: [
-      "LL.B, Strathmore University",
-      "MSc Energy Economics, University of Dundee"
-    ],
-    accomplishments: [
-      "Advised on financing for major solar power installations in Kenya",
-      "Structured joint ventures for oil and gas exploration",
-      "Speaker at Africa Energy Forum"
-    ],
-    languages: ["English", "Kiswahili", "French"]
+    languages: ["English", "Kiswahili"]
   },
   {
     id: 11,
-    name: "Elizabeth Wanjiru",
-    position: "Associate",
-    practice: "Insurance & Risk Management",
-    bio: "Elizabeth advises insurers, reinsurers and corporate policyholders on complex coverage issues, claims management and regulatory compliance in the insurance sector.",
+    name: "JOYCASTER MUEMA",
+    position: "LEGAL RESEARCHER",
+    practice: "Legal Research, Case Analysis",
+    bio: "Joycaster conducts thorough legal research, supporting the firm's attorneys with comprehensive analysis and case preparation.",
     image: "/images/team/female-attorney-3.jpg",
-    education: [
-      "LL.B, University of Nairobi",
-      "Diploma in Insurance Law, Chartered Insurance Institute"
-    ],
-    accomplishments: [
-      "Handled complex insurance claims in manufacturing and healthcare sectors",
-      "Developed insurance compliance frameworks for multinational corporations",
-      "Member of Association of Insurance Practitioners of Kenya"
-    ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 12,
-    name: "Moses Kimathi",
-    position: "Senior Counsel",
-    practice: "Constitutional Law, Human Rights",
-    bio: "With decades of experience in constitutional litigation, Moses has appeared numerous times before Kenya's Supreme Court and has shaped landmark decisions affecting human rights.",
+    name: "MWANGI MUTHIGA",
+    position: "FULL STACK ENGINEER",
+    practice: "Technology Solutions, Web Development",
+    bio: "Mwangi develops and maintains the firm's technological infrastructure, creating innovative solutions for both internal operations and client services.",
     image: "/images/team/male-attorney-9.jpg",
     education: [
-      "LL.B, University of Nairobi",
-      "Master of Human Rights Law, University of Cape Town"
+      "BS-CS (Bachelor of Science in Computer Science), International College of Technology, Kanazawa (ICT) Japan",
+      "BS-Mechatronics and Robotics Engineering Technology, School of Engineering, Tohoku University, Miyagi, JAPAN"
     ],
-    accomplishments: [
-      "Argued several landmark constitutional cases before Supreme Court",
-      "Former Chair of Kenya Law Society Constitutional Committee",
-      "Author of 'Constitutional Reform in Kenya: A Historical Perspective'"
-    ],
-    languages: ["English", "Kiswahili"]
+    languages: ["English", "Kiswahili", "Japanese"]
   },
   {
     id: 13,
-    name: "Peter Kamau",
-    position: "Associate",
-    practice: "Competition Law, Regulatory Compliance",
-    bio: "Peter helps clients navigate competition regulations and investigations, with particular focus on merger control, abuse of dominance, and anti-competitive agreements.",
+    name: "AMOS RONO",
+    position: "DRIVER",
+    practice: "Transportation, Logistics",
+    bio: "Amos ensures reliable transportation services for the firm, facilitating smooth logistical operations and timely appointments.",
     image: "/images/team/male-attorney-7.jpg",
-    education: [
-      "LL.B, University of Nairobi",
-      "Postgraduate Diploma in Competition Law, King's College London"
-    ],
-    accomplishments: [
-      "Successfully represented clients before Competition Authority of Kenya",
-      "Advised on merger clearances for major corporate transactions",
-      "Former legal researcher for Competition Authority"
-    ],
     languages: ["English", "Kiswahili"]
   },
   {
     id: 14,
-    name: "Grace Akinyi",
-    position: "Associate",
-    practice: "Family Law, Estate Planning",
-    bio: "Grace handles sensitive family law matters including divorce, child custody, and succession planning with a compassionate yet strategic approach that protects clients' interests.",
+    name: "PAMELLA KAMISI",
+    position: "OFFICE ASSISTANT",
+    practice: "Office Support, Administrative Assistance",
+    bio: "Pamella provides essential support for the firm's daily operations, contributing to the efficient functioning of the office environment.",
     image: "/images/team/female-attorney-2.jpg",
-    education: [
-      "LL.B, Kenyatta University",
-      "Diploma in Family Mediation, Kenya School of Law"
-    ],
-    accomplishments: [
-      "Successfully mediated high-net-worth family disputes",
-      "Developed innovative child-focused custody arrangements",
-      "Volunteer at Family Law Clinic providing pro bono legal assistance"
-    ],
-    languages: ["English", "Kiswahili", "Luo"]
+    languages: ["English", "Kiswahili"]
   }
 ];
 
