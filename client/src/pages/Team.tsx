@@ -401,8 +401,8 @@ export default function Team() {
                         </summary>
                         <div className="pt-4 text-sm space-y-4 px-2">
                           {attorney.education && (
-                            <div className="bg-[var(--navy-lighter)] p-4 rounded-lg">
-                              <h5 className="font-semibold text-[var(--navy)] flex items-center mb-3">
+                            <div className="bg-[var(--navy)] p-4 rounded-lg">
+                              <h5 className="font-semibold text-white flex items-center mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -414,7 +414,7 @@ export default function Team() {
                                 {attorney.education.map((edu, i) => (
                                   <li key={i} className="flex items-start">
                                     <span className="text-[var(--gold)] mr-2 text-lg">•</span>
-                                    <span className="text-[var(--charcoal)]">{edu}</span>
+                                    <span className="text-white">{edu}</span>
                                   </li>
                                 ))}
                               </ul>
@@ -422,8 +422,8 @@ export default function Team() {
                           )}
                           
                           {attorney.languages && (
-                            <div className="bg-[var(--navy-lighter)] p-4 rounded-lg">
-                              <h5 className="font-semibold text-[var(--navy)] flex items-center mb-3">
+                            <div className="bg-[var(--navy)] p-4 rounded-lg">
+                              <h5 className="font-semibold text-white flex items-center mb-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
                                 </svg>
