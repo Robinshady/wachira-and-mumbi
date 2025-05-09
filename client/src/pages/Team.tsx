@@ -391,7 +391,15 @@ export default function Team() {
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-[var(--gold)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            Attorney Profile
+                            {attorney.position === "MANAGING PARTNER" || attorney.position === "PRINCIPAL PARTNER" || attorney.position === "SENIOR ASSOCIATE ADVOCATE" || attorney.position === "ASSOCIATE ADVOCATE" || attorney.position === "LAWYER" ? "Attorney Profile" : 
+                              attorney.position === "LITIGATION & CONVEYANCING CLERK" ? "Clerk Profile" : 
+                              attorney.position === "OFFICE ADMINISTRATOR" ? "Administrator Profile" :  
+                              attorney.position === "ACCOUNTANT" ? "Accountant Profile" :
+                              attorney.position === "LEGAL RESEARCHER" ? "Researcher Profile" :
+                              attorney.position === "FULL STACK ENGINEER" ? "Engineer Profile" :
+                              attorney.position === "DRIVER" ? "Driver Profile" :
+                              attorney.position === "OFFICE ASSISTANT" ? "Staff Profile" : "Team Member Profile"
+                            }
                           </span>
                           <span className="transform group-open:rotate-180 transition-transform duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
