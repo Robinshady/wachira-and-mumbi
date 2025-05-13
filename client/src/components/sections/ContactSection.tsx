@@ -249,18 +249,15 @@ export default function ContactSection() {
                 </div>
               </div>
               
-              <div className="rounded-lg overflow-hidden shadow-lg h-56 sm:h-64 lg:h-80 relative">
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src="/images/team-uniform.jpg" 
-                    alt="Wachira & Mumbi Advocates Team in Uniform" 
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover"
-                    }}
-                  />
-                </div>
+              <div 
+                className="rounded-lg overflow-hidden shadow-lg h-56 sm:h-64 lg:h-80 relative" 
+                style={{
+                  backgroundImage: `url('/images/optimized/team-uniform-high-quality.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--navy)]/90 to-transparent p-4 z-10">
                   <h5 className="text-base sm:text-lg font-semibold text-white">Our Dedicated Team</h5>
                   <p className="text-xs sm:text-sm text-[var(--gold)]">Excellence in Legal Practice</p>

@@ -30,13 +30,15 @@ export default function AboutSection() {
               <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-[var(--gold)] z-20"></div>
               
               {/* Team Image */}
-              <div className="w-full rounded shadow-xl relative z-10 overflow-hidden">
-                <img 
-                  src="/images/team-image.jpg" 
-                  alt="Wachira & Mumbi Advocates Team" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <div 
+                className="w-full rounded shadow-xl relative z-10 overflow-hidden aspect-[16/9]" 
+                style={{
+                  backgroundImage: `url('/images/optimized/team-image-high-quality.jpg')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              ></div>
               
               {/* No need for premium overlay as it's built into the placeholder */}
               
