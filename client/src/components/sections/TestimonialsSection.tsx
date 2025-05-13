@@ -8,7 +8,7 @@ const testimonials = [
     text: "Wachira & Mumbi's corporate team provided exceptional counsel during our company's expansion across East Africa. Their strategic approach and attention to detail were invaluable in navigating complex regulatory issues across multiple jurisdictions.",
     name: "Dr. James Mwangi",
     title: "CEO, Equity Group Holdings",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
     rating: 5,
     featured: true
   },
@@ -17,7 +17,7 @@ const testimonials = [
     text: "When faced with complex litigation that threatened our business, we turned to Wachira & Mumbi. Their sophisticated strategy and tireless advocacy resulted in a complete victory that protected our operations and reputation in the Kenyan market.",
     name: "Mrs. Sarah Ochieng",
     title: "Managing Director, TransAfrica Logistics",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80",
     rating: 5,
     featured: false
   },
@@ -26,7 +26,7 @@ const testimonials = [
     text: "The property law expertise at Wachira & Mumbi was instrumental in resolving our long-standing land dispute in Nairobi County. Their knowledge of Kenyan land law and relationships with government agencies made all the difference.",
     name: "Mr. Charles Mutura",
     title: "Director, Savannah Real Estate",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+    image: "https://images.unsplash.com/photo-1506634572416-48cdfe530110?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
     rating: 5,
     featured: false
   },
@@ -35,7 +35,7 @@ const testimonials = [
     text: "Their exceptional understanding of constitutional law secured a landmark ruling that protected our rights. The team's dedication to justice and excellence is unmatched in Kenya's legal landscape.",
     name: "Prof. Njeri Kamau",
     title: "Executive Director, East African Rights Coalition",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
     rating: 5,
     featured: true
   },
@@ -44,7 +44,7 @@ const testimonials = [
     text: "Wachira & Mumbi provided superb counsel on our complex international trade agreements. Their expertise helped us navigate the intricate legal frameworks involved in cross-border commerce within the East African Community.",
     name: "Mr. Timothy Oduor",
     title: "Operations Director, Kenyan Exports Limited",
-    image: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
+    image: "https://images.unsplash.com/photo-1507152832244-10d45c7eda57?ixlib=rb-4.0.3&auto=format&fit=crop&w=774&q=80",
     rating: 5,
     featured: false
   }

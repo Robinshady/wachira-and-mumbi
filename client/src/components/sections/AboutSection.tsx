@@ -29,16 +29,13 @@ export default function AboutSection() {
               <div className="absolute top-0 left-0 w-1/3 h-1 bg-[var(--gold)] z-20"></div>
               <div className="absolute bottom-0 right-0 w-1/3 h-1 bg-[var(--gold)] z-20"></div>
               
-              {/* Image placeholder */}
-              <div className="w-full aspect-video rounded shadow-xl relative z-10 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-4 md:p-6">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-3 md:mb-4">
-                  <i className="fas fa-building text-[var(--gold)] text-2xl md:text-3xl"></i>
-                </div>
-                <h5 className="text-base md:text-lg font-semibold segoe-semibold mb-1 md:mb-2">Image Coming Soon</h5>
-                <p className="text-xs md:text-sm text-center text-white/70 max-w-xs">Professional photography will be available shortly</p>
-                <div className="mt-4 md:mt-6 animate-pulse">
-                  <i className="fas fa-camera text-[var(--gold)] text-lg md:text-xl"></i>
-                </div>
+              {/* Team Image */}
+              <div className="w-full rounded shadow-xl relative z-10 overflow-hidden">
+                <img 
+                  src="/images/team-image.jpg" 
+                  alt="Wachira & Mumbi Advocates Team" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               {/* No need for premium overlay as it's built into the placeholder */}
