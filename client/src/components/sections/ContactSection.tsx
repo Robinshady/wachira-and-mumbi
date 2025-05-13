@@ -249,14 +249,15 @@ export default function ContactSection() {
                 </div>
               </div>
               
-              <div className="rounded-lg overflow-hidden shadow-lg h-56 sm:h-64 lg:h-80 bg-gradient-to-r from-[var(--navy-lighter)] to-[var(--navy)] flex flex-col items-center justify-center text-white p-4 sm:p-6">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[var(--gold)]/20 flex items-center justify-center mb-3 sm:mb-4">
-                  <i className="fas fa-map-marked-alt text-[var(--gold)] text-2xl sm:text-3xl"></i>
-                </div>
-                <h5 className="text-base sm:text-lg font-semibold segoe-semibold mb-1 sm:mb-2">Image Coming Soon</h5>
-                <p className="text-xs sm:text-sm text-center text-white/70 max-w-xs">Building photo will be available shortly</p>
-                <div className="mt-4 sm:mt-6 animate-pulse">
-                  <i className="fas fa-camera text-[var(--gold)] text-lg sm:text-xl"></i>
+              <div className="rounded-lg overflow-hidden shadow-lg h-56 sm:h-64 lg:h-80 relative">
+                <img 
+                  src="/images/team-uniform.jpg" 
+                  alt="Wachira & Mumbi Advocates Team in Uniform" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[var(--navy)]/90 to-transparent p-4">
+                  <h5 className="text-base sm:text-lg font-semibold text-white">Our Dedicated Team</h5>
+                  <p className="text-xs sm:text-sm text-[var(--gold)]">Excellence in Legal Practice</p>
                 </div>
               </div>
             </div>
