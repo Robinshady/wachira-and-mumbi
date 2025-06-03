@@ -54,7 +54,7 @@ const testimonials = [
 const achievements = [
   { label: "Client Satisfaction", value: 97, suffix: "%", icon: "smile" },
   { label: "Cases Won", value: 850, suffix: "+", icon: "trophy" },
-  { label: "Years in Practice", value: 25, suffix: "+", icon: "calendar-alt" },
+  { label: "Years in Practice", value: 5, suffix: "+", icon: "calendar-alt" },
   { label: "Clients Served", value: 2700, suffix: "+", icon: "handshake" },
 ];
 

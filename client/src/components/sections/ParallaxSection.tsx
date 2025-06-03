@@ -60,7 +60,7 @@ export default function ParallaxSection() {
 
   // Counters for statistics
   const counters = [
-    { label: "Years of Excellence", value: "25+", icon: "star" },
+    { label: "Years of Excellence", value: "5+", icon: "star" },
     { label: "Cases Won", value: "850+", icon: "trophy" },
     { label: "Satisfied Clients", value: "2,700+", icon: "users" },
     { label: "Legal Professionals", value: "45", icon: "balance-scale" }
