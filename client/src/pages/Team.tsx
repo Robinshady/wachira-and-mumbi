@@ -248,7 +248,7 @@ export default function Team() {
                 <span className="ml-3 text-white text-xl">Practice Areas</span>
               </div>
               <div className="bg-[rgba(255,255,255,0.1)] px-8 py-4 rounded-lg backdrop-blur-sm border border-[rgba(255,255,255,0.1)]">
-                <span className="text-[var(--gold)] text-4xl md:text-5xl font-bold">25+</span>
+                <span className="text-[var(--gold)] text-4xl md:text-5xl font-bold">5+</span>
                 <span className="ml-3 text-white text-xl">Years Experience</span>
               </div>
             </div>
