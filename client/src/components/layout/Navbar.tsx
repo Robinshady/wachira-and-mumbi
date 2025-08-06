@@ -55,18 +55,10 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="text-white text-2xl font-bold flex items-center group">
             <div className="mr-3 relative">
-              <div className="w-10 h-10 rounded-sm border border-[var(--gold)]/30 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-[var(--gold)]">
+              <div className="w-12 h-12 rounded-sm border border-[var(--gold)]/30 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-[var(--gold)]">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--gold)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <img src="/attached_assets/logo_1754438647682.png" alt="Wachira & Mumbi Advocates Logo" className="w-8 h-8 object-contain" />
+                <img src="/attached_assets/logo_1754438647682.png" alt="Wachira & Mumbi Advocates Logo" className="w-10 h-10 object-contain" />
               </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-baseline">
-                <span className="playfair font-semibold mr-1 text-2xl md:text-3xl">Wachira</span>
-                <span className="text-[var(--gold)] mx-1 text-xl md:text-2xl">&</span>
-                <span className="playfair font-semibold ml-1 text-2xl md:text-3xl">Mumbi</span>
-              </div>
-              <span className="text-[var(--gold)] text-xs md:text-sm tracking-widest uppercase font-light">Advocates</span>
             </div>
           </Link>
           

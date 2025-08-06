@@ -232,6 +232,7 @@ export default function HeroSection() {
             <span className="segoe-semibold text-gradient-premium">Wachira</span>
             <span className="mx-2 md:mx-3 text-[var(--gold)]">&</span>
             <span className="segoe-semibold text-gradient-premium">Mumbi</span>
+            <span className="ml-2 md:ml-3 text-[var(--gold)] segoe-semibold">Advocates</span>
           </h2>
         </motion.div>
         

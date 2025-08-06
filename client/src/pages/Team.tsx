@@ -16,9 +16,9 @@ interface Attorney {
   languages?: string[];
 }
 
-// Create attorney data - Only the 5 main attorneys
+// Create expanded attorney data
 const attorneys: Attorney[] = [
-  // Only the 5 main attorneys
+  // Attorneys in correct order with accurate information
   {
     id: 1,
     name: "DR. KIMANI WACHIRA",
@@ -85,6 +85,94 @@ const attorneys: Attorney[] = [
       "PG DIP (LAW) KSL"
     ],
     languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 6,
+    name: "MIKE OYUGI",
+    position: "LAWYER",
+    practice: "",
+    bio: "Mike provides thorough legal analysis and strategic guidance on various legal matters, ensuring clients receive comprehensive legal support.",
+    image: "/images/team/male-attorney-5.jpg",
+    education: [
+      "LLB (HONS.) UNIVERSITY OF NAIROBI"
+    ],
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 7,
+    name: "SALMON ACHOLA",
+    position: "LITIGATION & CONVEYANCING CLERK",
+    practice: "",
+    bio: "Salmon provides essential support for litigation cases and conveyancing matters, ensuring smooth procedural processes for clients.",
+    image: "/images/team/male-attorney-1.jpg",
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 8,
+    name: "STELLAMARIS NZOMO",
+    position: "OFFICE ADMINISTRATOR",
+    practice: "",
+    bio: "Stellamaris ensures the efficient operation of the firm, coordinating office functions and serving as a key point of contact for clients.",
+    image: "/images/team/female-attorney-1.jpg",
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 9,
+    name: "JAMES MBUGUA",
+    position: "ACCOUNTANT",
+    practice: "",
+    bio: "James manages the firm's financial operations, ensuring accurate accounting practices and financial reporting.",
+    image: "/images/team/male-attorney-4.jpg",
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 10,
+    name: "KENNEDY NGIGE",
+    position: "ACCOUNTANT",
+    practice: "",
+    bio: "Kennedy provides essential financial expertise, maintaining the firm's compliance with financial regulations and reporting requirements.",
+    image: "/images/team/male-attorney-6.jpg",
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 11,
+    name: "JOYCASTER MUEMA",
+    position: "LEGAL RESEARCHER",
+    practice: "",
+    bio: "Joycaster conducts thorough legal research, supporting the firm's attorneys with comprehensive analysis and case preparation.",
+    image: "/images/team/female-attorney-3.jpg",
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 12,
+    name: "MWANGI MUTHIGA",
+    position: "FULL STACK ENGINEER",
+    practice: "",
+    bio: "Mwangi develops and maintains the firm's technological infrastructure, creating innovative solutions for both internal operations and client services.",
+    image: "/images/team/male-attorney-9.jpg",
+    education: [
+      "BS-CS (Bachelor of Science in Computer Science), International College of Technology, Kanazawa (ICT) Japan",
+      "BS-Mechatronics and Robotics Engineering Technology, School of Engineering, Tohoku University, Miyagi, JAPAN"
+    ],
+    languages: ["English", "Kiswahili", "Japanese"]
+  },
+  {
+    id: 13,
+    name: "AMOS RONO",
+    position: "DRIVER",
+    practice: "",
+    bio: "Amos ensures reliable transportation services for the firm, facilitating smooth logistical operations and timely appointments.",
+    image: "/images/team/male-attorney-7.jpg",
+    languages: ["English", "Kiswahili"]
+  },
+  {
+    id: 14,
+    name: "PAMELLA KAMISI",
+    position: "OFFICE ASSISTANT",
+    practice: "",
+    bio: "Pamella provides essential support for the firm's daily operations, contributing to the efficient functioning of the office environment.",
+    image: "/images/team/female-attorney-2.jpg",
+    languages: ["English", "Kiswahili"]
   }
 ];
 
@@ -128,7 +216,7 @@ export default function Team() {
                 <span className="ml-3 text-white text-xl">Practice Areas</span>
               </div>
               <div className="bg-[rgba(255,255,255,0.1)] px-8 py-4 rounded-lg backdrop-blur-sm border border-[rgba(255,255,255,0.1)]">
-                <span className="text-[var(--gold)] text-4xl md:text-5xl font-bold">5+</span>
+                <span className="text-[var(--gold)] text-4xl md:text-5xl font-bold">25+</span>
                 <span className="ml-3 text-white text-xl">Years Experience</span>
               </div>
             </div>
