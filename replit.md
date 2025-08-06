@@ -32,8 +32,9 @@ This is a full-stack JavaScript application built with React, Express, and Drizz
 
 - **2025-08-06**: Logo visibility and sizing improvements
   - Fixed logo not displaying by moving PNG file to public directory
-  - Increased logo size to better showcase landscape design with emblem and firm name
-  - Made logo image-only in navbar (removed text overlay)
+  - Increased logo size multiple times to better showcase landscape design (final size: 192px×64px mobile, 224px×80px desktop)
+  - Removed white borders and made logo image-only in navbar
+  - Updated website content with authentic text from 2025 firm profile document
 - **2025-08-06**: Content updates per user requirements
   - Added "Advocates" to firm name on homepage hero section
   - Restored full team of 14 members on team page
