@@ -30,6 +30,14 @@ This is a full-stack JavaScript application built with React, Express, and Drizz
 
 ## Recent Changes
 
+- **2025-08-06**: Logo visibility and sizing improvements
+  - Fixed logo not displaying by moving PNG file to public directory
+  - Increased logo size to better showcase landscape design with emblem and firm name
+  - Made logo image-only in navbar (removed text overlay)
+- **2025-08-06**: Content updates per user requirements
+  - Added "Advocates" to firm name on homepage hero section
+  - Restored full team of 14 members on team page
+  - Updated experience from "5+ Years" to "25+ Years" on team page
 - **2025-01-05**: Project migrated from Replit Agent to Replit environment
 - Added proper TypeScript configuration and build setup
 - Configured client-server separation for security
