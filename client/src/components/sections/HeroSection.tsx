@@ -292,9 +292,9 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
         >
-          Kenya's premier legal firm delivering sophisticated solutions with 
-          uncompromising dedication to excellence and client success across East Africa 
-          and beyond.
+          Wachira & Mumbi Advocates specializes in providing a wide range of superior legal services 
+          to private and corporate clients, as well as non-governmental organizations across Kenya 
+          with unwavering integrity, accountability, and transparency.
         </motion.p>
         
         {/* Premium CTA section with 3D effect buttons */}

@@ -55,9 +55,8 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="text-white text-2xl font-bold flex items-center group">
             <div className="mr-3 relative">
-              <div className="w-32 h-12 md:w-40 md:h-14 rounded-sm border border-[var(--gold)]/30 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-[var(--gold)] px-2">
-                <div className="absolute inset-0 bg-gradient-to-br from-[var(--gold)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <img src="/logo.png" alt="Wachira & Mumbi Advocates Logo" className="w-full h-full object-contain" />
+              <div className="w-40 h-14 md:w-48 md:h-16 flex items-center justify-center overflow-hidden transition-all duration-300 px-2">
+                <img src="/logo.png" alt="Wachira & Mumbi Advocates Logo" className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
           </Link>

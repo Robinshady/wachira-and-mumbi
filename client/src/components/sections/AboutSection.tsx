@@ -70,10 +70,10 @@ export default function AboutSection() {
               <div className="w-20 h-1 bg-[var(--gold)] mb-8 hidden"></div>
             </div>
             <p className="text-[var(--charcoal)] mb-5 leading-relaxed text-base md:text-lg">
-              Established in 2017, Wachira & Mumbi Advocates has grown to become one of Kenya's most respected legal practices. Our distinguished team combines profound local knowledge with international standards of excellence to deliver sophisticated counsel across diverse practice areas.
+              Wachira & Mumbi Advocates is one of Kenya's leading law firms with an excellent reputation for unparalleled quality of work, high responsiveness to clients' needs, integrity, and aptitude at finding innovative solutions to the most intricate legal problems.
             </p>
             <p className="text-[var(--charcoal)] mb-6 md:mb-8 leading-relaxed text-base md:text-lg">
-              Our advocates are recognized for their exceptional legal acumen, having been educated at Kenya's premier institutions and holding specialized qualifications in various fields of law. We pride ourselves on our ability to navigate complex legal landscapes with strategic thinking, meticulous preparation, and unwavering dedication to our clients' success.
+              The firm was founded in 2016 and registered as a partnership in 2020. We are dedicated to providing clients with innovative and efficient legal services of the highest caliber, offering result-oriented solutions to facilitate our clients' businesses and interests while upholding the rule of law.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-8 md:mb-10">
