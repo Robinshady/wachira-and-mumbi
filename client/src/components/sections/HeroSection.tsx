@@ -213,7 +213,7 @@ export default function HeroSection() {
         >
           <div className="bg-[var(--navy)]/80 border border-[var(--gold)]/20 backdrop-blur-sm py-1.5 px-3 md:py-2 md:px-4 rounded-full inline-flex items-center relative overflow-hidden group">
             <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[var(--gold)] mr-2"></div>
-            <span className="text-[10px] md:text-xs text-white uppercase tracking-ultra-wide segoe-light">Advocates of the High Court</span>
+            <span className="text-[10px] md:text-xs text-white uppercase tracking-ultra-wide segoe-light">Advocates</span>
             <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-[var(--gold)] ml-2"></div>
             
             {/* Shimmer effect */}

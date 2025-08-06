@@ -6,10 +6,11 @@ const caseResults = [
   {
     id: 1,
     title: "Historic Company Law Victory",
-    result: "91.5M Ksh",
-    description: "Landmark judgment in Kenyan commercial law establishing new precedents for corporate liability and director responsibility",
+    result: "5 Billion+ Ksh",
+    description: "Landmark judgment in Kenyan commercial law establishing new precedents for corporate liability and director responsibility. Dr. Kimani Wachira successfully represented clients in multiple high-profile cases, as recognized in Kenya's Top Litigation Lawyers 2025.",
     category: "Corporate",
-    tags: ["Commercial Litigation", "Corporate Law", "Precedent Setting"]
+    tags: ["Commercial Litigation", "Corporate Law", "Precedent Setting"],
+    caseRef: "https://thelawyer.africa/2025/04/12/the-lawyer-africa-top-litigation-lawyers-kenya-2025/"
   },
   {
     id: 2,
@@ -63,7 +64,7 @@ export default function ParallaxSection() {
     { label: "Years of Excellence", value: "5+", icon: "star" },
     { label: "Cases Won", value: "850+", icon: "trophy" },
     { label: "Satisfied Clients", value: "2,700+", icon: "users" },
-    { label: "Legal Professionals", value: "45", icon: "balance-scale" }
+    { label: "Legal Professionals", value: "5", icon: "balance-scale" }
   ];
 
   return (
@@ -301,9 +302,26 @@ export default function ParallaxSection() {
                   </div>
                 </div>
                 
-                <p className="text-gray-300 mb-8 leading-relaxed">
+                <p className="text-gray-300 mb-6 leading-relaxed">
                   {caseItem.description}
                 </p>
+                
+                {/* Case Reference Link */}
+                {caseItem.caseRef && (
+                  <div className="mb-8">
+                    <a 
+                      href={caseItem.caseRef} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-[var(--gold)] hover:text-white transition-colors duration-300 text-sm"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                      View Case Reference
+                    </a>
+                  </div>
+                )}
                 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-8">

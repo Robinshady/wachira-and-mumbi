@@ -16,14 +16,14 @@ interface Attorney {
   languages?: string[];
 }
 
-// Create expanded attorney data
+// Create attorney data - Only the 5 main attorneys
 const attorneys: Attorney[] = [
-  // Attorneys in correct order with accurate information
+  // Only the 5 main attorneys
   {
     id: 1,
     name: "DR. KIMANI WACHIRA",
     position: "MANAGING PARTNER",
-    practice: "Corporate Law, Commercial Disputes",
+    practice: "",
     bio: "Dr. Kimani Wachira leads the firm with extensive experience in corporate and commercial law, bringing expertise and strategic guidance to complex legal matters.",
     image: "/images/james-wachira.jpg",
     education: [
@@ -38,7 +38,7 @@ const attorneys: Attorney[] = [
     id: 2,
     name: "MUMBI NTHIGA",
     position: "PRINCIPAL PARTNER",
-    practice: "Litigation, Dispute Resolution",
+    practice: "",
     bio: "A distinguished litigator with exceptional expertise in complex commercial and civil disputes, providing strategic counsel and representation to clients.",
     image: "/images/catherine-mumbi.jpg",
     education: [
@@ -51,7 +51,7 @@ const attorneys: Attorney[] = [
     id: 3,
     name: "BRIAN NTHEI",
     position: "SENIOR ASSOCIATE ADVOCATE",
-    practice: "Real Estate, Finance",
+    practice: "",
     bio: "Specializing in real estate transactions and financial matters, Brian brings valuable expertise and dedication to every client case.",
     image: "/images/brian-nthei.jpg",
     education: [
@@ -64,7 +64,7 @@ const attorneys: Attorney[] = [
     id: 4,
     name: "NDUNG'U KAHURA",
     position: "ASSOCIATE ADVOCATE",
-    practice: "Commercial Litigation, Corporate Law",
+    practice: "",
     bio: "Ndung'u handles complex legal matters with precision and dedication, focusing on achieving the best possible outcomes for clients.",
     image: "/images/team/male-attorney-8.jpg",
     education: [
@@ -77,7 +77,7 @@ const attorneys: Attorney[] = [
     id: 5,
     name: "ERIC SIMIYU",
     position: "ASSOCIATE ADVOCATE",
-    practice: "Civil Litigation, Administrative Law",
+    practice: "",
     bio: "Eric's meticulous approach to legal research and strategy helps clients navigate complex legal challenges effectively.",
     image: "/images/team/male-attorney-2.jpg",
     education: [
@@ -85,130 +85,10 @@ const attorneys: Attorney[] = [
       "PG DIP (LAW) KSL"
     ],
     languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 6,
-    name: "MIKE OYUGI",
-    position: "LAWYER",
-    practice: "Legal Research, Contract Law",
-    bio: "Mike provides thorough legal analysis and strategic guidance on various legal matters, ensuring clients receive comprehensive legal support.",
-    image: "/images/team/male-attorney-5.jpg",
-    education: [
-      "LLB (HONS.) UNIVERSITY OF NAIROBI"
-    ],
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 7,
-    name: "SALMON ACHOLA",
-    position: "LITIGATION & CONVEYANCING CLERK",
-    practice: "Litigation Support, Conveyancing",
-    bio: "Salmon provides essential support for litigation cases and conveyancing matters, ensuring smooth procedural processes for clients.",
-    image: "/images/team/male-attorney-1.jpg",
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 8,
-    name: "STELLAMARIS NZOMO",
-    position: "OFFICE ADMINISTRATOR",
-    practice: "Administrative Management, Client Relations",
-    bio: "Stellamaris ensures the efficient operation of the firm, coordinating office functions and serving as a key point of contact for clients.",
-    image: "/images/team/female-attorney-1.jpg",
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 9,
-    name: "JAMES MBUGUA",
-    position: "ACCOUNTANT",
-    practice: "Financial Management, Billing",
-    bio: "James manages the firm's financial operations, ensuring accurate accounting practices and financial reporting.",
-    image: "/images/team/male-attorney-4.jpg",
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 10,
-    name: "KENNEDY NGIGE",
-    position: "ACCOUNTANT",
-    practice: "Financial Analysis, Compliance",
-    bio: "Kennedy provides essential financial expertise, maintaining the firm's compliance with financial regulations and reporting requirements.",
-    image: "/images/team/male-attorney-6.jpg",
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 11,
-    name: "JOYCASTER MUEMA",
-    position: "LEGAL RESEARCHER",
-    practice: "Legal Research, Case Analysis",
-    bio: "Joycaster conducts thorough legal research, supporting the firm's attorneys with comprehensive analysis and case preparation.",
-    image: "/images/team/female-attorney-3.jpg",
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 12,
-    name: "MWANGI MUTHIGA",
-    position: "FULL STACK ENGINEER",
-    practice: "Technology Solutions, Web Development",
-    bio: "Mwangi develops and maintains the firm's technological infrastructure, creating innovative solutions for both internal operations and client services.",
-    image: "/images/team/male-attorney-9.jpg",
-    education: [
-      "BS-CS (Bachelor of Science in Computer Science), International College of Technology, Kanazawa (ICT) Japan",
-      "BS-Mechatronics and Robotics Engineering Technology, School of Engineering, Tohoku University, Miyagi, JAPAN"
-    ],
-    languages: ["English", "Kiswahili", "Japanese"]
-  },
-  {
-    id: 13,
-    name: "AMOS RONO",
-    position: "DRIVER",
-    practice: "Transportation, Logistics",
-    bio: "Amos ensures reliable transportation services for the firm, facilitating smooth logistical operations and timely appointments.",
-    image: "/images/team/male-attorney-7.jpg",
-    languages: ["English", "Kiswahili"]
-  },
-  {
-    id: 14,
-    name: "PAMELLA KAMISI",
-    position: "OFFICE ASSISTANT",
-    practice: "Office Support, Administrative Assistance",
-    bio: "Pamella provides essential support for the firm's daily operations, contributing to the efficient functioning of the office environment.",
-    image: "/images/team/female-attorney-2.jpg",
-    languages: ["English", "Kiswahili"]
   }
 ];
 
-// Practice areas with their expertise descriptions
-const practiceAreas = [
-  {
-    id: 1,
-    name: "Corporate & Commercial",
-    expertise: ["Mergers & Acquisitions", "Corporate Governance", "Joint Ventures", "Commercial Contracts"]
-  },
-  {
-    id: 2,
-    name: "Litigation & Dispute Resolution",
-    expertise: ["Commercial Litigation", "Arbitration", "Mediation", "Constitutional Law"]
-  },
-  {
-    id: 3,
-    name: "Real Estate & Finance",
-    expertise: ["Property Transactions", "Project Finance", "Banking Regulations", "Securities Law"]
-  },
-  {
-    id: 4,
-    name: "Intellectual Property",
-    expertise: ["Trademark Protection", "Patent Registration", "Copyright Law", "IP Licensing"]
-  },
-  {
-    id: 5,
-    name: "Employment & Labor",
-    expertise: ["HR Compliance", "Employment Contracts", "Labor Disputes", "Collective Bargaining"]
-  },
-  {
-    id: 6, 
-    name: "Tax Advisory",
-    expertise: ["Corporate Tax Planning", "International Tax", "Tax Dispute Resolution", "VAT & Customs"]
-  }
-];
+
 
 export default function Team() {
   return (
@@ -244,7 +124,7 @@ export default function Team() {
                 <span className="ml-3 text-white text-xl">Attorneys</span>
               </div>
               <div className="bg-[rgba(255,255,255,0.1)] px-8 py-4 rounded-lg backdrop-blur-sm border border-[rgba(255,255,255,0.1)]">
-                <span className="text-[var(--gold)] text-4xl md:text-5xl font-bold">{practiceAreas.length}</span>
+                <span className="text-[var(--gold)] text-4xl md:text-5xl font-bold">6</span>
                 <span className="ml-3 text-white text-xl">Practice Areas</span>
               </div>
               <div className="bg-[rgba(255,255,255,0.1)] px-8 py-4 rounded-lg backdrop-blur-sm border border-[rgba(255,255,255,0.1)]">
@@ -259,59 +139,7 @@ export default function Team() {
 
       {/* Main Content */}
       <div className="bg-[var(--navy-lighter)] py-24">
-        {/* Practice Areas Section */}
-        <motion.section 
-          id="practice-areas"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="container mx-auto px-4 md:px-6"
-        >
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block px-5 py-2 bg-[var(--navy)] text-[#d4af37] rounded-full text-xs font-semibold uppercase tracking-wider mb-5 border border-[#d4af37] shadow-md">
-              <span className="font-bold">Expertise & Knowledge</span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--navy)] playfair mb-8">Our Practice Areas</h2>
-            <div className="h-1.5 w-32 bg-[#d4af37] mx-auto mb-10 rounded-full shadow-sm"></div>
-            <p className="text-[var(--gold)] text-lg md:text-xl font-medium leading-relaxed">
-              We offer comprehensive legal services across key practice areas, tailored to meet the diverse needs of individuals, businesses, and organizations throughout Kenya and East Africa.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-            {practiceAreas.map((area) => (
-              <motion.div 
-                key={area.id}
-                whileHover={{ y: -8, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-                className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300"
-              >
-                <div className="h-16 bg-[var(--navy)] relative">
-                  <div className="absolute -bottom-8 left-8 h-16 w-16 rounded-full bg-[var(--gold)] flex items-center justify-center text-white shadow-lg">
-                    <span className="text-2xl font-bold">{area.id}</span>
-                  </div>
-                </div>
-                
-                <div className="pt-12 px-8 pb-8">
-                  <h4 className="text-2xl font-bold text-[var(--navy)] playfair mb-5">{area.name}</h4>
-                  <div className="h-px w-full bg-gradient-to-r from-[var(--gold)] to-transparent mb-6"></div>
-                  <ul className="space-y-3">
-                    {area.expertise.map((item, index) => (
-                      <li key={index} className="flex items-start">
-                        <div className="h-6 w-6 rounded-full bg-[var(--navy-lighter)] flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[var(--navy)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                        <span className="text-[var(--gold)] text-base font-medium">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
 
         {/* Team Section */}
         <div className="container mx-auto px-4 md:px-6 mt-32 mb-16">
@@ -377,10 +205,6 @@ export default function Team() {
                   </div>
                   
                   <div className="p-8 border-t-2 border-[var(--gold)] relative bg-white">
-                    <div className="absolute -top-5 left-8 bg-[var(--navy)] text-white px-6 py-2 rounded-md shadow-lg text-sm font-bold">
-                      {attorney.practice}
-                    </div>
-                    
                     <h4 className="text-2xl font-bold text-[var(--navy)] playfair mt-3">{attorney.name}</h4>
                     <div className="h-0.5 w-20 bg-[#d4af37] my-4 rounded-full shadow-sm"></div>
                     

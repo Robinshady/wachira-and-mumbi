@@ -57,7 +57,7 @@ export default function Navbar() {
             <div className="mr-3 relative">
               <div className="w-10 h-10 rounded-sm border border-[var(--gold)]/30 flex items-center justify-center overflow-hidden transition-all duration-300 group-hover:border-[var(--gold)]">
                 <div className="absolute inset-0 bg-gradient-to-br from-[var(--gold)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="text-[var(--gold)] font-bold playfair text-xl">W</span>
+                <img src="/attached_assets/logo_1754438647682.png" alt="Wachira & Mumbi Advocates Logo" className="w-8 h-8 object-contain" />
               </div>
             </div>
             <div className="flex flex-col">
@@ -66,7 +66,7 @@ export default function Navbar() {
                 <span className="text-[var(--gold)] mx-1 text-xl md:text-2xl">&</span>
                 <span className="playfair font-semibold ml-1 text-2xl md:text-3xl">Mumbi</span>
               </div>
-              <span className="text-[var(--gold)] text-xs md:text-sm tracking-widest uppercase font-light">Advocates of the High Court</span>
+              <span className="text-[var(--gold)] text-xs md:text-sm tracking-widest uppercase font-light">Advocates</span>
             </div>
           </Link>
           
@@ -88,21 +88,32 @@ export default function Navbar() {
                 { id: "home", label: "Home" },
                 { id: "about", label: "About" },
                 { id: "services", label: "Services" },
-                { id: "team", label: "Team" },
+                { id: "team", label: "Team", isLink: true, href: "/team" },
+                { id: "practice-areas", label: "Practice Areas", isLink: true, href: "/practice-areas" },
                 { id: "results", label: "Results" }
-              ].map((item) => (
-                <button 
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)} 
-                  className={`relative px-4 py-2 text-sm font-medium uppercase tracking-wider transition-all duration-300 rounded-full ${
-                    activeSection === item.id
-                      ? 'text-[var(--navy)] bg-[var(--gold)]' 
-                      : 'text-white hover:text-[var(--gold)]'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
+              ].map((item, index) => 
+                item.isLink ? (
+                  <Link 
+                    key={item.id}
+                    href={item.href || ""}
+                    className="relative px-4 py-2 text-sm font-medium uppercase tracking-wider transition-all duration-300 rounded-full text-white hover:text-[var(--gold)]"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button 
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)} 
+                    className={`relative px-4 py-2 text-sm font-medium uppercase tracking-wider transition-all duration-300 rounded-full ${
+                      activeSection === item.id
+                        ? 'text-[var(--navy)] bg-[var(--gold)]' 
+                        : 'text-white hover:text-[var(--gold)]'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
             </div>
             
             <button 

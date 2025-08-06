@@ -49,7 +49,7 @@ const services = [
   },
   {
     id: 5,
-    title: "Employment & Labor",
+    title: "Employment & Labour",
     description: "Expert counsel on Kenyan employment legislation, workplace policies, collective bargaining agreements, and representation before the Employment and Labour Relations Court.",
     icon: "briefcase",
     highlight: "Advisors to major Kenyan employers",

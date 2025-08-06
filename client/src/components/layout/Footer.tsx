@@ -57,7 +57,7 @@ export default function Footer() {
                   <span className="text-[var(--gold)] mx-1 text-xl">&</span>
                   <span className="playfair font-semibold ml-1 text-2xl">Mumbi</span>
                 </div>
-                <span className="text-[var(--gold)] text-xs tracking-widest uppercase font-light">Advocates of the High Court</span>
+                <span className="text-[var(--gold)] text-xs tracking-widest uppercase font-light">Advocates</span>
               </div>
             </a>
             <div className="space-y-2 mt-4">

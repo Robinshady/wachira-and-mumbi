@@ -48,7 +48,7 @@ export default function AboutSection() {
                   <div className="w-2 h-2 md:w-3 md:h-3 bg-[var(--gold)] mr-2 rounded-full"></div>
                   <h4 className="font-bold text-[var(--navy)] text-xs md:text-sm">Established</h4>
                 </div>
-                <p className="text-[var(--charcoal)] text-lg md:text-xl font-bold playfair">2005</p>
+                <p className="text-[var(--charcoal)] text-lg md:text-xl font-bold playfair">2017</p>
               </div>
             </div>
           </motion.div>
@@ -70,7 +70,7 @@ export default function AboutSection() {
               <div className="w-20 h-1 bg-[var(--gold)] mb-8 hidden"></div>
             </div>
             <p className="text-[var(--charcoal)] mb-5 leading-relaxed text-base md:text-lg">
-              Established in 2005, Wachira & Mumbi Advocates has grown to become one of Kenya's most respected legal practices. Our distinguished team combines profound local knowledge with international standards of excellence to deliver sophisticated counsel across diverse practice areas.
+              Established in 2017, Wachira & Mumbi Advocates has grown to become one of Kenya's most respected legal practices. Our distinguished team combines profound local knowledge with international standards of excellence to deliver sophisticated counsel across diverse practice areas.
             </p>
             <p className="text-[var(--charcoal)] mb-6 md:mb-8 leading-relaxed text-base md:text-lg">
               Our advocates are recognized for their exceptional legal acumen, having been educated at Kenya's premier institutions and holding specialized qualifications in various fields of law. We pride ourselves on our ability to navigate complex legal landscapes with strategic thinking, meticulous preparation, and unwavering dedication to our clients' success.
